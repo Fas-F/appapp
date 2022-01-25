@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,6 +47,28 @@ table th{
   color: #ecda75; !important
   font-family: garamond, georgia
 }
+    .CellWithComment{
+  position:relative;
+}
+
+.CellComment{
+  display:none;
+  position:absolute; 
+  z-index:100;
+  border:1px;
+  background-color:#8789b9;
+  border-style:solid;
+  border-width:1px;
+  border-color:#3c3d5a;
+  padding:3px;
+  color:white; 
+  top:30px; 
+  left:20px;
+}
+
+.CellWithComment:hover span.CellComment{
+  display:block;
+}
  </style>
 </head>
 <body><br>
@@ -67,32 +88,41 @@ table th{
 <th>Modifier</th>
 </tr>
 <tr>
-<td>Strength</td>
+      <td class="CellWithComment">Strength
+        <span class="CellComment">Governs attack/damage with melee weapons, athletics checks, strength saving throws.</span>
+      </td>
 <td><input type="number" value="8" min="8" max="18" id="strScore" onchange="updateModifiers()" class="h-25 w-100 qty1" style=""></td>
 <td><input type="number" value="-1" id="strMod" style="" class="h-25 w-25"></td>
 </tr>
 <tr>
-<td>Dexterity</td>
+      <td class="CellWithComment">Dexterity
+        <span class="CellComment">Governs attack/damage with ranged weapons, reflex saving throws, acrobatics & stealth checks.</span>
+      </td>
 <td><input type="number" value="8" min="8" max="18" id="dexScore" onchange="updateModifiers()" class="h-25 w-100 qty1"></td>
 <td class="w-50"><input type="number" value="-1" id="dexMod" class="w-25"></td>
 </tr>
 <tr>
-<td>Constitution</td>
+      <td class="CellWithComment">Constitution
+        <span class="CellComment">Governs Vitality points at 12 per bonus, fortitude saving throws, unlocks advanced armory feats.</span>
+      </td>
 <td><input type="number" value="8" min="8" max="18" id="conScore" onchange="updateModifiers()" class="h-25 w-100 qty1"></td>
 <td><input type="number" value="-1" id="conMod" class="w-25"></td>
 </tr>
 <tr>
-<td>Intelligence</td>
+      <td class="CellWithComment">Intelligence
+        <span class="CellComment">Governs initial skillpoints at 3 per bonus, insight and engineering checks.</span>
 <td><input type="number" value="8" min="8" max="18" id="intScore" onchange="updateModifiers()" class="h-25 w-100 qty1 qty2"></td>
 <td><input type="number" value="-1" id="intMod" class="w-25 qty3"></td>
 </tr>
 <tr>
-<td>Wisdom</td>
+      <td class="CellWithComment">Wisdom
+        <span class="CellComment">Governs attack/damage with Magicka, healing, awareness bonus.</span>
 <td><input type="number" value="8" min="8" max="18" id="wisScore" onchange="updateModifiers()" class="h-25 w-100 qty1"></td>
 <td><input type="number" value="-1" id="wisMod" class="w-25"></td>
 </tr>
 <tr>
-<td>Charisma</td>
+      <td class="CellWithComment">Charisma
+        <span class="CellComment">Governs persuasion and criminology.</span>
 <td><input type="number" value="8" min="8" max="18" id="chaScore" onchange="updateModifiers()" class="h-25 w-100 qty1"></td>
 <td><input type="number" value="" id="chaMod" class="h-25 w-25"></td>
 </tr>
