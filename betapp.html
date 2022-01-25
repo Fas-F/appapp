@@ -38,12 +38,15 @@ body  {
   background-image: url("https://fas-f.github.io/appapp/black-parchment-paper-texture.jpg");
   background-color: #cccccc;
   color: #ecda75; !important
+  font-family: garamond, georgia
 }
 table td{
   color: #ecda75; !important
+  font-family: garamond, georgia
 }
 table th{
   color: #ecda75; !important
+  font-family: garamond, georgia
 }
  </style>
 </head>
@@ -54,9 +57,7 @@ table th{
 <div class="col-4" style="">
 <h2>Name</h2><br>
 <input type="text" id="name" name="name"><br><br>
-<br>
 <h2 contenteditable="true">Attributes</h2>
-<br>
    <td>Attribute Points Available:<input type="number" id="total" class="total" style="" value="30"></td>
 <table class="table">
 <tbody>
@@ -133,7 +134,7 @@ table th{
 <option value="heavyarmor">+3 Armor</option>
 </optgroup>
 </select>
-<br><br>
+<br>
 <h6>Duelist</h6>
 <select id="duelist" onchange="duelist(this);">
 <option value="usduel">Unskilled</option>
@@ -147,7 +148,7 @@ table th{
 <option value="duel3">+3 One-Handed</option>
 </optgroup>
 </select>
-<br><br>
+<br>
 <h6>Greatweapons</h6>
 <select id="gr8" onchange="greatweapons(this);">
 <option value="usgr8">Unskilled</option>
@@ -161,7 +162,7 @@ table th{
 <option value="gr83">+3 Two-Handed</option>
 </optgroup>
 </select>
-<br><br>
+<br>
 <h6>Ballistics</h6>
 <select id="boom" onchange="boom(this);">
 <option value="usboom">Unskilled</option>
@@ -175,7 +176,7 @@ table th{
 <option value="boom3">+3 Firearms</option>
 </optgroup>
 </select>
-<br><br>
+<br>
 <h6>Ranged Weapons</h6>
 <select id="range" onchange="range(this);">
 <option value="usrange">Unskilled</option>
@@ -189,7 +190,7 @@ table th{
 <option value="range3">+3 Ranged Weapons</option>
 </optgroup>
 </select>
-<br><br>
+<br>
 <h6>Arcane Arts</h6>
 <select id="arc" onchange="arc(this);">
 <option value="usgr8">Unskilled</option>
@@ -203,7 +204,7 @@ table th{
 <option value="arc3">+3 Arcane</option>
 </optgroup>
 </select>
-<br><br>
+<br>
 <h6>Conjury and Restoration</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
@@ -217,7 +218,7 @@ table th{
 <option value="arc3">+3 C&R</option>
 </optgroup>
 </select>
-<br><br>
+<br>
 <h6>Conditioning</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
@@ -231,7 +232,7 @@ table th{
 <option value="arc3">+3 Saving Throws</option>
 </optgroup>
 </select>
-<br><br>
+<br>
 <h6>Toughness</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
@@ -245,6 +246,7 @@ table th{
 <option value="arc3">-3 Damage/Hit</option>
 </optgroup>
 </select>
+<br>
 <h6>Resistance: Fear</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
@@ -252,6 +254,7 @@ table th{
 <option value="arc1">+2 Fear Resistance</option>
 </optgroup>
 </select>
+<br>
 <h6>Resistance: Poison</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
@@ -259,6 +262,7 @@ table th{
 <option value="arc2">+2 Poison Resistance</option>
 </optgroup>
 </select>
+<br>
 <h6>Resistance: Stun</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
@@ -266,6 +270,7 @@ table th{
 <option value="arc2">+2 Stun Resistance</option>
 </optgroup>
 </select>
+<br>
 <h6>Break Their Back!</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
@@ -273,6 +278,7 @@ table th{
 <option value="arc1">+3 Stun</option>
 </optgroup>
 </select>
+<br>
 <h6>Break Their Will!</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
@@ -280,6 +286,7 @@ table th{
 <option value="arc2">+3 Fear</option>
 </optgroup>
 </select>
+<br>
 <h6>Break Their Organs!</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
@@ -287,27 +294,23 @@ table th{
 <option value="arc2">+3 Stun Poison</option>
 </optgroup>
 </select>
-<h6>Break Their Will!</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc2" value="Resistance: Poison" label="Feat: Break Their Will!">
-<option value="arc2">+3 Fear</option>
-</optgroup>
-</select>
+<br>
 <h6>Disciple of The Land</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
 <optgroup id="arc2" value="Resistance: Stun" label="Disciple of the Hand">
-<option value="arc2">Crafting Expertise (DM Discretion)</option>
+<option value="arc2">Crafting Expertise</option>
 </optgroup>
 </select>
+<br>
 <h6>Disciple of The Hand</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
 <optgroup id="arc2" value="Resistance: Stun" label="Disciple of the Land">
-<option value="arc2">Survivalism Expertise (DM Discretion)</option>
+<option value="arc2">Survivalism Expertise</option>
 </optgroup>
 </select>
+<br>
 <h6>Cleave</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
@@ -321,6 +324,7 @@ table th{
 <option value="arc3">+3 Damage/Targets per Target</option>
 </optgroup>
 </select>
+<br>
 <h6>Power Attack</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
@@ -334,6 +338,7 @@ table th{
 <option value="arc3">-4 Attack/+7 Damage</option>
 </optgroup>
 </select>
+<br>
 <h6>Flurry</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
@@ -347,6 +352,7 @@ table th{
 <option value="arc3">Extra Attack, -1 Def (1/enc</option>
 </optgroup>
 </select>
+<br>
 <h6>Critical Strike</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
@@ -360,6 +366,7 @@ table th{
 <option value="arc3">18-20 Crit</option>
 </optgroup>
 </select>
+<br>
 <h6>Sneak Attack</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
@@ -373,6 +380,7 @@ table th{
 <option value="arc3">+1-9 damage when target cannot respond to attack</option>
 </optgroup>
 </select>
+<br>
 <h6>Charge</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
@@ -386,6 +394,7 @@ table th{
 <option value="arc3">+4 Attack/+4 Damage, 1/enc</option>
 </optgroup>
 </select>
+<br>
 <h6>Cure</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
@@ -399,6 +408,7 @@ table th{
 <option value="arc3">+3 Healing, +WIS, All</option>
 </optgroup>
 </select>
+<br>
 <h6>Esuna</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
@@ -412,6 +422,7 @@ table th{
 <option value="arc3">+1d4 Against Status, All</option>
 </optgroup>
 </select>
+<br>
 <h6>Barriers</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
@@ -425,6 +436,7 @@ table th{
 <option value="arc3">+7 Damage All, 1/enc</option>
 </optgroup>
 </select>
+<br>
 <h6>Streetwise</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
@@ -438,6 +450,7 @@ table th{
 <option value="arc3">+3 Criminology</option>
 </optgroup>
 </select>
+<br>
 <h6>Empathy</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
@@ -451,6 +464,7 @@ table th{
 <option value="arc3">+3 Persuade</option>
 </optgroup>
 </select>
+<br>
 <h6>Clairvoyance</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
@@ -464,6 +478,7 @@ table th{
 <option value="arc3">+3 Awareness</option>
 </optgroup>
 </select>
+<br>
 <h6>Bookworm</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
@@ -477,6 +492,7 @@ table th{
 <option value="arc3">+3 Insight</option>
 </optgroup>
 </select>
+<br>
 <h6>Gear Head</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
