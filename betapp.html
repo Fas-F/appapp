@@ -1,0 +1,1051 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Test</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script
+    type="text/javascript"
+    src="//code.jquery.com/jquery-3.2.1.slim.js"
+    
+  ></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+      
+    /* EOS */
+  </style>
+
+  <script id="insert"></script>
+
+
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+<head>
+<link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body><br>
+<div class="container">
+<form id="charSheet">
+<div class="row">
+<div class="col-4" style="">
+<h2>Name</h2><br>
+<input type="text" id="name" name="name"><br><br>
+<br>
+<h2 contenteditable="true">Attributes</h2>
+<br>
+   <td>Attribute Points Available:<input type="number" id="total" class="total" style="" value="30"></td>
+<table class="table">
+<tbody>
+<tr>
+<th>Ability</th>
+<th>Score</th>
+<th>Modifier</th>
+</tr>
+<tr>
+<td>Strength</td>
+<td><input type="number" value="8" min="8" max="18" id="strScore" onchange="updateModifiers()" class="h-25 w-100 qty1" style=""></td>
+<td><input type="number" value="-1" id="strMod" style="" class="h-25 w-25"></td>
+</tr>
+<tr>
+<td>Dexterity</td>
+<td><input type="number" value="8" min="8" max="18" id="dexScore" onchange="updateModifiers()" class="h-25 w-100 qty1"></td>
+<td class="w-50"><input type="number" value="-1" id="dexMod" class="w-25"></td>
+</tr>
+<tr>
+<td>Constitution</td>
+<td><input type="number" value="8" min="8" max="18" id="conScore" onchange="updateModifiers()" class="h-25 w-100 qty1"></td>
+<td><input type="number" value="-1" id="conMod" class="w-25"></td>
+</tr>
+<tr>
+<td>Intelligence</td>
+<td><input type="number" value="8" min="8" max="18" id="intScore" onchange="updateModifiers()" class="h-25 w-100 qty1 qty2"></td>
+<td><input type="number" value="-1" id="intMod" class="w-25 qty3"></td>
+</tr>
+<tr>
+<td>Wisdom</td>
+<td><input type="number" value="8" min="8" max="18" id="wisScore" onchange="updateModifiers()" class="h-25 w-100 qty1"></td>
+<td><input type="number" value="-1" id="wisMod" class="w-25"></td>
+</tr>
+<tr>
+<td>Charisma</td>
+<td><input type="number" value="8" min="8" max="18" id="chaScore" onchange="updateModifiers()" class="h-25 w-100 qty1"></td>
+<td><input type="number" value="" id="chaMod" class="h-25 w-25"></td>
+</tr>
+</tbody>
+</table>
+<div class="text-center">
+<btn class="btn btn-secondary" onclick="setLocalStorage();">Save Data</btn>
+<btn class="btn btn-secondary" onclick="getStoredValues();">Load Data</btn>
+</div>
+<br>
+<h2>Vitality</h2>
+<div class="center-me">
+<input type="checkbox" id="defaultHP" onchange="defaultHP();">
+<span>Vitality: </span>
+<input class="stat w-25" type="number" id="currentHP"> / <input class="stat w-25" type="number" id="maxHP">
+</div>
+<div class="center-me">
+<span class="btn btn-danger" onclick="takeDamage();">Damage</span>
+<input type="number" class="stat" id="modHP">
+<span class="btn btn-success" onclick="healHP();">Heal</span>
+</div>
+<btn class="btn btn-success" onclick="longRest();">Full Heal</btn>
+<br>
+<div class="text-center">
+</div>
+</div>
+<div class="col-4" style="">
+<h2>Feats</h2>
+<h6>Armory</h6>
+<select id="equippedArmor" onchange="equipArmor(this);">
+<option value="unarmored">Unarmored</option>
+<optgroup id="lightarmor" value="Light Armor" label="Feat: Armory">
+<option value="lightarmor">+1 Armor</option>
+</optgroup>
+<optgroup id="mediumarmor" value="Medium Armor" label="Feat: Armory Improved">
+<option value="mediumarmor">+2 Armor</option>
+</optgroup>
+<optgroup id="heavyarmor" value="Heavy Armor" label="Feat: Armory Master">
+<option value="heavyarmor">+3 Armor</option>
+</optgroup>
+</select>
+<br><br>
+<h6>Duelist</h6>
+<select id="duelist" onchange="duelist(this);">
+<option value="usduel">Unskilled</option>
+<optgroup id="duel1" value="Dueling Novice" label="Feat: Novice Duelist">
+<option value="duel1">+1 One-Handed</option>
+</optgroup>
+<optgroup id="duel2" value="Improved Duelist" label="Feat: Improved Dueling">
+<option value="duel2">+2 One-Handed</option>
+</optgroup>
+<optgroup id="duel3" value="Master Duelist" label="Feat: Master Duelist">
+<option value="duel3">+3 One-Handed</option>
+</optgroup>
+</select>
+<br><br>
+<h6>Greatweapons</h6>
+<select id="gr8" onchange="greatweapons(this);">
+<option value="usgr8">Unskilled</option>
+<optgroup id="gr81" value="Greatweapons Novice" label="Feat: Greatweapons Novice">
+<option value="gr81">+1 Two-Handed</option>
+</optgroup>
+<optgroup id="gr82" value="Improved Greatweapons" label="Feat: Improved Greatweapons">
+<option value="gr82">+2 Two-Handed</option>
+</optgroup>
+<optgroup id="gr83" value="Greatweapon Mastery" label="Feat: Improved Greatweapons">
+<option value="gr83">+3 Two-Handed</option>
+</optgroup>
+</select>
+<br><br>
+<h6>Ballistics</h6>
+<select id="boom" onchange="boom(this);">
+<option value="usboom">Unskilled</option>
+<optgroup id="boom1" value="Ballistics Novice" label="Feat: Ballistics Novice">
+<option value="boom1">+1 Firearms</option>
+</optgroup>
+<optgroup id="boom2" value="Improved Ballistics" label="Feat: Ballistics Novice">
+<option value="boom2">+2 Firearms</option>
+</optgroup>
+<optgroup id="boom3" value="Ballistics Mastery" label="Feat: Ballistics Mastery">
+<option value="boom3">+3 Firearms</option>
+</optgroup>
+</select>
+<br><br>
+<h6>Ranged Weapons</h6>
+<select id="range" onchange="range(this);">
+<option value="usrange">Unskilled</option>
+<optgroup id="range1" value="Ranged Novice" label="Feat: Ranged Novice">
+<option value="range1">+1 Ranged Weapons</option>
+</optgroup>
+<optgroup id="range2" value="Improved Ranged" label="Feat: Improved Ranged">
+<option value="range2">+2 Ranged Weapons</option>
+</optgroup>
+<optgroup id="range3" value="Ranged Mastery" label="Feat: Ranged Mastery">
+<option value="range3">+3 Ranged Weapons</option>
+</optgroup>
+</select>
+<br><br>
+<h6>Arcane Arts</h6>
+<select id="arc" onchange="arc(this);">
+<option value="usgr8">Unskilled</option>
+<optgroup id="arc1" value="Arcane Novice" label="Feat: Arcane Novice">
+<option value="arc1">+1 Arcane</option>
+</optgroup>
+<optgroup id="arc2" value="Improved Arcanima" label="Feat: Improved Arcanima">
+<option value="arc2">+2 Arcane</option>
+</optgroup>
+<optgroup id="arc3" value="Arcane Mastery" label="Feat: Arcane Mastery">
+<option value="arc3">+3 Arcane</option>
+</optgroup>
+</select>
+<br><br>
+<h6>Conjury and Restoration</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc1" value="Novice C&R" label="Feat: Novice C&R">
+<option value="arc1">+1 C&R</option>
+</optgroup>
+<optgroup id="arc2" value="Improved C&R" label="Feat: Improved C&R">
+<option value="arc2">+2 C&R</option>
+</optgroup>
+<optgroup id="arc3" value="C&R Mastery" label="Feat: C&R Mastery">
+<option value="arc3">+3 C&R</option>
+</optgroup>
+</select>
+<br><br>
+<h6>Conditioning</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc1" value="Novice Conditioning" label="Feat: Novice Conditioning">
+<option value="arc1">+1 Saving Throws</option>
+</optgroup>
+<optgroup id="arc2" value="Improved Conditioning" label="Feat: Improved Conditioning">
+<option value="arc2">+2 Saving Throws</option>
+</optgroup>
+<optgroup id="arc3" value="Master Conditioning" label="Feat: Master Conditioning">
+<option value="arc3">+3 Saving Throws</option>
+</optgroup>
+</select>
+<br><br>
+<h6>Toughness</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc1" value="Novice Toughness" label="Feat: Novice Toughness">
+<option value="arc1">-1 Damage/Hit</option>
+</optgroup>
+<optgroup id="arc2" value="Improved Toughness" label="Feat: Improved Conditioning">
+<option value="arc2">-2 Damage/Hit</option>
+</optgroup>
+<optgroup id="arc3" value="Master Toughness" label="Feat: Toughness">
+<option value="arc3">-3 Damage/Hit</option>
+</optgroup>
+</select>
+<h6>Resistance: Fear</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc1" value="Resistance: Fear" label="Feat: Resistance: Fear">
+<option value="arc1">+2 Fear Resistance</option>
+</optgroup>
+</select>
+<h6>Resistance: Poison</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc2" value="Resistance: Poison" label="Feat: Resistance: Poisong">
+<option value="arc2">+2 Poison Resistance</option>
+</optgroup>
+</select>
+<h6>Resistance: Stun</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc2" value="Resistance: Stun" label="Feat: Resistance: Stun">
+<option value="arc2">+2 Stun Resistance</option>
+</optgroup>
+</select>
+<h6>Break Their Back!</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc1" value="Resistance: Fear" label="Feat: Break Their Back!">
+<option value="arc1">+3 Stun</option>
+</optgroup>
+</select>
+<h6>Break Their Will!</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc2" value="Resistance: Poison" label="Feat: Break Their Will!">
+<option value="arc2">+3 Fear</option>
+</optgroup>
+</select>
+<h6>Break Their Organs!</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc2" value="Resistance: Stun" label="Feat: Break Their Organs!">
+<option value="arc2">+3 Stun Poison</option>
+</optgroup>
+</select>
+<h6>Break Their Will!</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc2" value="Resistance: Poison" label="Feat: Break Their Will!">
+<option value="arc2">+3 Fear</option>
+</optgroup>
+</select>
+<h6>Disciple of The Land</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc2" value="Resistance: Stun" label="Disciple of the Hand">
+<option value="arc2">Crafting Expertise (DM Discretion)</option>
+</optgroup>
+</select>
+<h6>Disciple of The Hand</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc2" value="Resistance: Stun" label="Disciple of the Land">
+<option value="arc2">Survivalism Expertise (DM Discretion)</option>
+</optgroup>
+</select>
+<h6>Cleave</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc1" value="Novice Cleaving" label="Feat: Novice Cleaving">
+<option value="arc1">+1 Damage/Targets per Target</option>
+</optgroup>
+<optgroup id="arc2" value="Improved Cleaving" label="Feat: Improved Cleaving">
+<option value="arc2">+2 Damage/Targets per Target</option>
+</optgroup>
+<optgroup id="arc3" value="Master Cleaving" label="Feat: Master Cleaving">
+<option value="arc3">+3 Damage/Targets per Target</option>
+</optgroup>
+</select>
+<h6>Power Attack</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc1" value="Novice PA" label="Feat: Novice PA">
+<option value="arc1">-4 Attack/+3 Damage</option>
+</optgroup>
+<optgroup id="arc2" value="Improved PA" label="Feat: Improved PA">
+<option value="arc2">-4 Attack/+5 Damage</option>
+</optgroup>
+<optgroup id="arc3" value="Master PA" label="Feat: Master PA">
+<option value="arc3">-4 Attack/+7 Damage</option>
+</optgroup>
+</select>
+<h6>Flurry</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc1" value="Novice Flurry" label="Feat: Novice Flurry">
+<option value="arc1">Extra Attack, -4 Def (1/enc)</option>
+</optgroup>
+<optgroup id="arc2" value="Improved Flurry" label="Feat: Improved Flurry">
+<option value="arc2">Extra Attack, -2 Def (1/enc</option>
+</optgroup>
+<optgroup id="arc3" value="Master Flurry" label="Feat: Master Flurry">
+<option value="arc3">Extra Attack, -1 Def (1/enc</option>
+</optgroup>
+</select>
+<h6>Critical Strike</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc1" value="Novice Crit Strike" label="Feat: Novice Crit. Strike">
+<option value="arc1">19-20 Crit, -5 Def</option>
+</optgroup>
+<optgroup id="arc2" value="Improved Crit. Strike" label="Feat: Improved Crit Strike">
+<option value="arc2">19-20 Crit, -3 Def</option>
+</optgroup>
+<optgroup id="arc3" value="Crit Strike Mastery" label="Feat: Crit Strike Mastery">
+<option value="arc3">18-20 Crit</option>
+</optgroup>
+</select>
+<h6>Sneak Attack</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc1" value="Novice Crit Strike" label="Feat: Novice Sneak Attack">
+<option value="arc1">+1-3 damage when target cannot respond to attack</option>
+</optgroup>
+<optgroup id="arc2" value="Improved Crit. Strike" label="Feat: Improved Sneak Attack">
+<option value="arc2">+1-6 damage when target cannot respond to attack</option>
+</optgroup>
+<optgroup id="arc3" value="Crit Strike Mastery" label="Feat: Master Sneak Attack">
+<option value="arc3">+1-9 damage when target cannot respond to attack</option>
+</optgroup>
+</select>
+<h6>Charge</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc1" value="Novice Crit Strike" label="Feat: Charge">
+<option value="arc1">+1 Attack/+1 Damage, 1/enc</option>
+</optgroup>
+<optgroup id="arc2" value="Improved Crit. Strike" label="Feat: Improved Charge">
+<option value="arc2">+2 Attack/+2 Damage, 1/enc</option>
+</optgroup>
+<optgroup id="arc3" value="Crit Strike Mastery" label="Feat: Master Charge">
+<option value="arc3">+4 Attack/+4 Damage, 1/enc</option>
+</optgroup>
+</select>
+<h6>Cure</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc1" value="Novice Cure" label="Feat: Charge">
+<option value="arc1">+5 Healing, +WIS</option>
+</optgroup>
+<optgroup id="arc2" value="Improved Crit. Strike" label="Feat: Improved Cure">
+<option value="arc2">+3 Healing, +WIS, 3 members</option>
+</optgroup>
+<optgroup id="arc3" value="Crit Strike Mastery" label="Feat: Master Cure">
+<option value="arc3">+3 Healing, +WIS, All</option>
+</optgroup>
+</select>
+<h6>Esuna</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc1" value="Novice Esuna" label="Feat: Charge">
+<option value="arc1">+1d6 Against Status</option>
+</optgroup>
+<optgroup id="arc2" value="Improved Crit. Strike" label="Feat: Improved Esuna">
+<option value="arc2">+1d4 Against Status, 3 members</option>
+</optgroup>
+<optgroup id="arc3" value="Crit Strike Mastery" label="Feat: Esuna Mastery">
+<option value="arc3">+1d4 Against Status, All</option>
+</optgroup>
+</select>
+<h6>Barriers</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc1" value="Novice Barriers" label="Feat: Charge">
+<option value="arc1">-3 Damage All, 1/enc</option>
+</optgroup>
+<optgroup id="arc2" value="Improved Crit. Strike" label="Feat: Improved Barriers">
+<option value="arc2">-5 Damage All, 1/enc</option>
+</optgroup>
+<optgroup id="arc3" value="Crit Strike Mastery" label="Feat: Barriers Mastery">
+<option value="arc3">+7 Damage All, 1/enc</option>
+</optgroup>
+</select>
+<h6>Streetwise</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc1" value="Novice Streetwise" label="Feat: Novice Streetwise">
+<option value="arc1">+1 Criminology</option>
+</optgroup>
+<optgroup id="arc2" value="Improved Crit. Strike" label="Feat: Improved Streetwise">
+<option value="arc2">+2 Criminology</option>
+</optgroup>
+<optgroup id="arc3" value="Crit Strike Mastery" label="Feat: Streetwise Mastery">
+<option value="arc3">+3 Criminology</option>
+</optgroup>
+</select>
+<h6>Empathy</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc1" value="Novice Streetwise" label="Feat: Novice Empathy">
+<option value="arc1">+1 Persuade</option>
+</optgroup>
+<optgroup id="arc2" value="Improved Crit. Strike" label="Feat: Improved Empathy">
+<option value="arc2">+2 Persuade</option>
+</optgroup>
+<optgroup id="arc3" value="Crit Strike Mastery" label="Feat: Empathy Mastery">
+<option value="arc3">+3 Persuade</option>
+</optgroup>
+</select>
+<h6>Clairvoyance</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc1" value="Novice Clairvoyance" label="Feat: Novice Empathy">
+<option value="arc1">+1 Awareness</option>
+</optgroup>
+<optgroup id="arc2" value="Improved Crit. Strike" label="Feat: Improved Clairvoyance">
+<option value="arc2">+2 Awareness</option>
+</optgroup>
+<optgroup id="arc3" value="Crit Strike Mastery" label="Feat: Clairvoyance Mastery">
+<option value="arc3">+3 Awareness</option>
+</optgroup>
+</select>
+<h6>Bookworm</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc1" value="Novice Clairvoyance" label="Feat: Novice Bookworm">
+<option value="arc1">+1 Insight</option>
+</optgroup>
+<optgroup id="arc2" value="Improved Crit. Strike" label="Feat: Improved Clairvoyance">
+<option value="arc2">+2 Insight</option>
+</optgroup>
+<optgroup id="arc3" value="Crit Strike Mastery" label="Feat: Insight Mastery">
+<option value="arc3">+3 Insight</option>
+</optgroup>
+</select>
+<h6>Gear Head</h6>
+<select id="conj" onchange="conj(this);">
+<option value="conj">Unskilled</option>
+<optgroup id="arc1" value="Novice Clairvoyance" label="Feat: Novice Gear Head">
+<option value="arc1">+1 Engineering</option>
+</optgroup>
+<optgroup id="arc2" value="Improved Crit. Strike" label="Feat: Improved Clairvoyance">
+<option value="arc2">+2 Engineering</option>
+</optgroup>
+<optgroup id="arc3" value="Crit Strike Mastery" label="Feat: Insight Mastery">
+<option value="arc3">+3 Engineering</option>
+</optgroup>
+</select>
+</div>
+<div class="col-4" style="">
+<h2 style="">Skills</h2>
+   <td>Skill Points Available:<input type="number" id="stotal" class="stotal" style="" value="10"></td>
+<table class="table">
+<tbody>
+<tr>
+<td><input type="checkbox" id="acroProf" onchange="setSkills();"></td>
+<td>Acrobatics</td>
+<td><input type="number" id="acroScore" class="w-25 qty4 qtyacr" min="0" max="12"></td>
+</tr>
+<tr></tr>
+<tr></tr>
+<tr>
+<td><input type="checkbox" id="athlProf" onchange="setSkills();"></td>
+<td>Athetics</td>
+<td><input type="number" id="athlScore" class="w-25 qty4 qtyathl min="0" max="12""></td>
+</tr>
+<tr>
+<td><input type="checkbox" id="aweProf" onchange="setSkills();"></td>
+<td>Awareness</td>
+<td><input type="number" id="aweScore" class="w-25 qty4 qtyawe" min="0" max="12"></td>
+</tr>
+<tr>
+<td><input type="checkbox" id="crimProf" onchange="setSkills();"></td>
+<td>Criminology</td>
+<td><input type="number" id="crimScore" class="w-25 qty4 qtycrim" min="0" max="12"></td>
+</tr>
+<tr>
+<td><input type="checkbox" id="engiProf" onchange="setSkills();"></td>
+<td>Engineering</td>
+<td><input type="number" id="engiScore" class="w-25 qty4 qtyengi"></td>
+</tr>
+<tr>
+<td><input type="checkbox" id="insProf" onchange="setSkills();"></td>
+<td>Insight</td>
+<td><input type="number" id="insScore" class="w-25 qty4 qtyins min="0" max="12""></td>
+</tr>
+<tr>
+<td><input type="checkbox" id="persProf" onchange="setSkills();"></td>
+<td>Persuade</td>
+<td><input type="number" id="persScore" class="w-25 qty4 qtypers" min="0" max="12"></td>
+</tr>
+<tr>
+<td><input type="checkbox" id="steProf" onchange="setSkills();"></td>
+<td>Stealth</td>
+<td><input type="number" id="steScore" class="w-25 qty4 qtyste" min="0" max="12"></td>
+</tr>
+</tbody>
+</table>
+<h6>Defense Rating</h6><input type="number" id="armorClass" placeholder="0" class="form-control-sm w-25" style=""><br>
+<br>
+<h6>Initiative Bonus</h6><input type="number" id="initClass" placeholder="0" class="form-control-sm w-25" style="">
+<br>
+<h6>Fortitude Save</h6><input type="number" id="fortClass" placeholder="0" class="form-control-sm w-25" style="">
+<h6>Will Save</h6><input type="number" id="willClass" placeholder="0" class="form-control-sm w-25" style="">
+<h6>Reflex Save</h6><input type="number" id="reflClass" placeholder="0" class="form-control-sm w-25" style="">
+<br>
+</div>
+</div>
+</form>
+</div>
+</body>
+</html>
+
+    <script type="text/javascript">//<![CDATA[
+
+
+//Point Tracker
+
+var intstart
+var acro
+var stotal
+
+$(document).on("change", ".qty1", function() {
+    var sum = 30;
+    $(".qty1").each(function(){
+        sum += -($(this).val() - 8);
+    });
+    $(".total").val(sum);
+});
+
+$(document).on("change", ".qty2", function() {
+    var sum = 0;
+    $(".qty2").each(function(){
+        sum += +($(".qty3").val() * 3) + 10;
+      
+    });
+    $(".stotal").val(sum);
+    stotal = sum
+    console.log(stotal)
+});
+//Accr
+$('.qtyacr').on('focusin', function(){
+    console.log("Saving value " + $(this).val());
+    $(this).data('valacc', $(this).val());
+});
+var input = $('.qtyacr');
+var inputValacc = input.val();
+input.on('change', function() {
+  var diff = 0
+  var focus = $(this).data('valacc')
+  console.log('Current Value: ', $(this).val());
+  console.log('Old Value: ', inputValacc);
+  console.log('Old Value Int: ', $.isNumeric(inputValacc));
+  console.log('Focus Value: ', focus);
+  if ($.isNumeric(inputValacc) == false){
+  	diff = $(this).val() - focus;
+    console.log('Diff Input NaN ' + diff);
+    inputValacc = $(this).val();
+    stotal += -diff;
+    console.log('Stotal Input NaN ' + stotal);
+  $('.stotal').val(stotal);	
+  } else {
+    diff = $(this).val() - inputValacc;
+    console.log('Diff Input Valid' + diff);
+    inputValacc = $(this).val();
+    stotal += -diff;
+    console.log('Diff Input Valid' + stotal);
+  $('.stotal').val(stotal);
+  }
+});
+//Athl
+$('.qtyathl').on('focusin', function(){
+    console.log("Saving value " + $(this).val());
+    $(this).data('valathl', $(this).val());
+});
+
+var input = $('.qtyathl');
+var inputValath = input.val();
+input.on('change', function() {
+  var diff = 0
+  var focus = $(this).data('valathl')
+  console.log('Current Value: ', $(this).val());
+  console.log('Old Value: ', inputValath);
+  console.log('Old Value Int: ', $.isNumeric(inputValath));
+  console.log('Focus Value: ', focus);
+  if ($.isNumeric(inputValath) == false){
+  	diff = $(this).val() - focus;
+    console.log(diff);
+    inputValath = $(this).val();
+    stotal += -diff;
+    console.log(stotal);
+  $('.stotal').val(stotal);	
+  } else {
+    diff = $(this).val() - inputValath;
+    console.log(diff);
+    inputValath = $(this).val();
+    stotal += -diff;
+    console.log(stotal);
+  $('.stotal').val(stotal);
+  }
+});
+//Awe
+$('.qtyawe').on('focusin', function(){
+    console.log("Saving value " + $(this).val());
+    $(this).data('valawe', $(this).val());
+});
+
+var input = $('.qtyawe');
+var inputValawe = input.val();
+input.on('change', function() {
+  var diff = 0
+  var focus = $(this).data('valawe')
+  console.log('Current Value: ', $(this).val());
+  console.log('Old Value: ', inputValawe);
+  console.log('Old Value Int: ', $.isNumeric(inputValawe));
+  console.log('Focus Value: ', focus);
+  if ($.isNumeric(inputValawe) == false){
+    console.log('Entering NaN tree')
+  	diff = $(this).val() - focus;
+    console.log(diff);
+    inputValawe = $(this).val();
+    stotal += -diff;
+    console.log(stotal);
+  $('.stotal').val(stotal);	
+  } else {
+  	console.log('Entering Valid tree')
+    diff = $(this).val() - inputValawe;
+    console.log(diff);
+    inputValawe = $(this).val();
+    stotal += -diff;
+    console.log(stotal);
+  $('.stotal').val(stotal);
+  }
+});
+
+//Crim
+$('.qtycrim').on('focusin', function(){
+    console.log("Saving value " + $(this).val());
+    $(this).data('valcrim', $(this).val());
+});
+
+var input = $('.qtycrim');
+var inputValcrim = input.val();
+input.on('change', function() {
+  var diff = 0
+  var focus = $(this).data('valcrim')
+  console.log('Current Value: ', $(this).val());
+  console.log('Old Value: ', inputValcrim);
+  console.log('Old Value Int: ', $.isNumeric(inputValcrim));
+  console.log('Focus Value: ', focus);
+  if ($.isNumeric(inputVal) == false){
+    console.log('Entering NaN tree')
+  	diff = $(this).val() - focus;
+    console.log(diff);
+    inputValcrim = $(this).val();
+    stotal += -diff;
+    console.log(stotal);
+  $('.stotal').val(stotal);	
+  } else {
+  	console.log('Entering Valid tree')
+    diff = $(this).val() - inputValcrim;
+    console.log(diff);
+    inputValcrim = $(this).val();
+    stotal += -diff;
+    console.log(stotal);
+  $('.stotal').val(stotal);
+  }
+});
+
+//Engi
+$('.qtyengi').on('focusin', function(){
+    console.log("Saving value " + $(this).val());
+    $(this).data('valengi', $(this).val());
+});
+var input = $('.qtyengi');
+var inputValengi = input.val();
+input.on('change', function() {
+  var diff = 0
+  var focus = $(this).data('valengi')
+  console.log('Current Value: ', $(this).val());
+  console.log('Old Value: ', inputValengi);
+  console.log('Old Value Int: ', $.isNumeric(inputValengi));
+  console.log('Focus Value: ', focus);
+  if ($.isNumeric(inputValengi) == false){
+    console.log('Entering NaN tree')
+  	diff = $(this).val() - focus;
+    console.log(diff);
+    inputValengi = $(this).val();
+    stotal += -diff;
+    console.log(stotal);
+  $('.stotal').val(stotal);	
+  } else {
+  	console.log('Entering Valid tree')
+    diff = $(this).val() - inputValengi;
+    console.log(diff);
+    inputValengi = $(this).val();
+    stotal += -diff;
+    console.log(stotal);
+  $('.stotal').val(stotal);
+  }
+});
+
+//Ins
+$('.qtyins').on('focusin', function(){
+    console.log("Saving value " + $(this).val());
+    $(this).data('valins', $(this).val());
+});
+
+var input = $('.qtyins');
+var inputValins = input.val();
+input.on('change', function() {
+  var diff = 0
+  var focus = $(this).data('valins')
+  console.log('Current Value: ', $(this).val());
+  console.log('Old Value Int: ', $.isNumeric(inputValins));
+  console.log('Focus Value: ', focus);
+  if ($.isNumeric(inputValins) == false){
+  	diff = $(this).val() - focus;
+    console.log(diff);
+    inputValins = $(this).val();
+    stotal += -diff;
+    console.log(stotal);
+  $('.stotal').val(stotal);	
+  } else {
+    diff = $(this).val() - inputValins;
+    console.log(diff);
+    inputValins = $(this).val();
+    stotal += -diff;
+    console.log(stotal);
+  $('.stotal').val(stotal);
+  }
+});
+
+//Pers
+$('.qtypers').on('focusin', function(){
+    console.log("Saving value " + $(this).val());
+    $(this).data('valpers', $(this).val());
+});
+
+var input = $('.qtypers');
+var inputValpers = input.val();
+input.on('change', function() {
+  var diff = 0
+  var focus = $(this).data('valpers')
+  console.log('Current Value: ', $(this).val());
+  console.log('Old Value: ', inputValpers);
+  console.log('Old Value Int: ', $.isNumeric(inputValpers));
+  console.log('Focus Value: ', focus);
+  if ($.isNumeric(inputValpers) == false){
+    console.log('Entering NaN tree');
+  	diff = $(this).val() - focus;
+    console.log(diff);
+    inputValpers = $(this).val();
+    stotal += -diff;
+    console.log(stotal);
+  $('.stotal').val(stotal);	
+  } else {
+  	console.log('Entering Valid tree');
+    diff = $(this).val() - inputValpers;
+    console.log(diff);
+    inputValpers = $(this).val();
+    stotal += -diff;
+    console.log(stotal);
+  $('.stotal').val(stotal);
+  }
+});
+
+//Ste
+$('.qtyste').on('focusin', function(){
+    console.log("Saving value " + $(this).val());
+    $(this).data('valste', $(this).val());
+});
+
+var input = $('.qtyste');
+var inputVal = input.val();
+input.on('change', function() {
+  var diff = 0
+  var focus = $(this).data('valste')
+  console.log('Current Value: ', $(this).val());
+  console.log('Old Value: ', inputVal);
+  console.log('Old Value Int: ', $.isNumeric(inputVal));
+  console.log('Focus Value: ', focus);
+  if ($.isNumeric(inputVal) == false){
+  	diff = $(this).val() - focus;
+    console.log(diff);
+    inputVal = $(this).val();
+    stotal += -diff;
+    console.log(stotal);
+  $('.stotal').val(stotal);	
+  } else {
+    diff = $(this).val() - inputVal;
+    console.log(diff);
+    inputVal = $(this).val();
+    stotal += -diff;
+    console.log(stotal);
+  $('.stotal').val(stotal);
+  }
+});
+
+function getStoredValues() {
+// Set ability scores
+document.getElementById("strScore").value = localStorage.getItem("strScore");
+document.getElementById("dexScore").value = localStorage.getItem("dexScore");
+document.getElementById("conScore").value = localStorage.getItem("conScore");
+document.getElementById("intScore").value = localStorage.getItem("intScore");
+document.getElementById("wisScore").value = localStorage.getItem("wisScore");
+document.getElementById("chaScore").value = localStorage.getItem("chaScore");
+updateModifiers();
+//Armor
+document.getElementById("equippedArmor").value = localStorage.getItem("equippedArmor");
+equipArmor(equippedArmor);
+//Vit
+document.getElementById("currentHP").value = localStorage.getItem("currentHP");
+document.getElementById("maxHP").value = localStorage.getItem("maxHP");
+//Skills
+document.getElementById("acroProf").checked = JSON.parse(localStorage.getItem('acroProf'));
+document.getElementById("athlProf").checked = JSON.parse(localStorage.getItem('athlProf'));
+document.getElementById("aweProf").checked = JSON.parse(localStorage.getItem('aweProf'));
+document.getElementById("crimProf").checked = JSON.parse(localStorage.getItem('engiProf'));
+document.getElementById("engiProf").checked = JSON.parse(localStorage.getItem('engiProf'));
+document.getElementById("insProf").checked = JSON.parse(localStorage.getItem('insProf'));
+document.getElementById("persProf").checked = JSON.parse(localStorage.getItem('persProf'));
+document.getElementById("steProf").checked = JSON.parse(localStorage.getItem('steProf'));
+setSkills();
+}
+
+function setLocalStorage() {
+// Save ability scores
+localStorage.setItem("strScore", document.getElementById("strScore").value);
+localStorage.setItem("dexScore", document.getElementById("dexScore").value);
+localStorage.setItem("conScore", document.getElementById("conScore").value);
+localStorage.setItem("intScore", document.getElementById("intScore").value);
+localStorage.setItem("wisScore", document.getElementById("wisScore").value);
+localStorage.setItem("chaScore", document.getElementById("chaScore").value);
+// Save armor
+localStorage.setItem("equippedArmor", document.getElementById("equippedArmor").value);
+// Save HP
+localStorage.setItem("currentHP", document.getElementById("currentHP").value);
+localStorage.setItem("maxHP", document.getElementById("maxHP").value);
+// Save skills
+localStorage.setItem('acroProf', document.getElementById('acroProf').checked);
+localStorage.setItem('athlProf', document.getElementById('athlProf').checked);
+localStorage.setItem('aweProf', document.getElementById('aweProf').checked);
+localStorage.setItem('crimProf', document.getElementById('crimProf').checked);
+localStorage.setItem('engiProf', document.getElementById('engiProf').checked);
+localStorage.setItem('insProf', document.getElementById('insProf').checked);
+localStorage.setItem('persProf', document.getElementById('persProf').checked);
+localStorage.setItem('steProf', document.getElementById('steProf').checked);
+// debug log
+var i;
+console.log("local storage");
+for (i = 0; i < localStorage.length; i++) {
+console.log(localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]");
+}
+}
+function updateModifiers() {
+// convert ability scores into modifiers
+var strScore = document.getElementById("strScore").value;
+document.getElementById("strMod").value = Math.floor((strScore - 10)/2);
+var dexScore = document.getElementById("dexScore").value;
+document.getElementById("dexMod").value = Math.floor((dexScore - 10)/2);
+var conScore = document.getElementById("conScore").value;
+document.getElementById("conMod").value = Math.floor((conScore - 10)/2);
+var intScore = document.getElementById("intScore").value;
+document.getElementById("intMod").value = Math.floor((intScore - 10)/2);
+var wisScore = document.getElementById("wisScore").value;
+document.getElementById("wisMod").value = Math.floor((wisScore - 10)/2);
+var chaScore = document.getElementById("chaScore").value;
+document.getElementById("chaMod").value = Math.floor((chaScore - 10)/2);
+
+setSkills();
+setInit();
+setFort();
+setWill();
+setReflex();
+defaultHP();
+enableArmor();
+equipArmor(equippedArmor);
+}
+
+function setSkills() {
+var strMod = parseInt(document.getElementById("strMod").value);
+var dexMod = parseInt(document.getElementById("dexMod").value);
+var conMod = parseInt(document.getElementById("conMod").value);
+var intMod = parseInt(document.getElementById("intMod").value);
+var wisMod = parseInt(document.getElementById("wisMod").value);
+var chaMod = parseInt(document.getElementById("chaMod").value);
+
+if (dexMod < 0) {
+document.getElementById("acroScore").value = 0;
+} else {
+document.getElementById("acroScore").value = dexMod;
+}
+if (strMod < 0) {
+document.getElementById("athlScore").value = 0;
+} else {
+document.getElementById("athlScore").value = strMod;
+}
+if (wisMod < 0) {
+document.getElementById("aweScore").value = 0;
+} else {
+document.getElementById("aweScore").value = wisMod;
+}
+if (chaMod < 0) {
+document.getElementById("crimScore").value = 0;
+} else {
+document.getElementById("crimScore").value = chaMod;
+}
+if (intMod < 0) {
+document.getElementById("engiScore").value = 0;
+} else {
+document.getElementById("engiScore").value = intMod;
+}
+if (intMod < 0) {
+document.getElementById("insScore").value = 0;
+} else {
+document.getElementById("insScore").value = intMod;
+}
+if (chaMod < 0) {
+document.getElementById("persScore").value = 0;
+} else {
+document.getElementById("persScore").value = chaMod;
+}
+if (dexMod < 0) {
+document.getElementById("steScore").value = 0;
+} else {
+document.getElementById("steScore").value = dexMod;
+}
+
+}
+function setInit () {
+document.getElementById("initClass").value = (parseInt(document.getElementById("dexMod").value) + parseInt(document.getElementById("aweScore").value));
+}
+function setFort () {
+document.getElementById("fortClass").value = (parseInt(document.getElementById("conMod").value) + 5);
+}
+function setWill () {
+document.getElementById("willClass").value = (parseInt(document.getElementById("wisMod").value) + 5);
+}
+function setReflex () {
+document.getElementById("reflClass").value = (parseInt(document.getElementById("dexMod").value) + 5);
+}
+
+function equipArmor(equippedArmor) {
+var armor = equippedArmor.value;
+if (armor == 'unarmored') {
+document.getElementById("armorClass").value = parseInt(document.getElementById("dexMod").value);
+} else if (armor == 'lightarmor') {
+document.getElementById("armorClass").value = parseInt(document.getElementById("dexMod").value) + 1;
+} else if (armor == 'mediumarmor') {
+document.getElementById("armorClass").value = parseInt(document.getElementById("dexMod").value) + 2;
+} else if (armor == 'heavyarmor') {
+document.getElementById("armorClass").value = parseInt(document.getElementById("dexMod").value) + 3;
+}
+}
+function enableArmor() {
+var strScore = document.getElementById("strScore").value;
+if (strScore > 14) {
+document.getElementById("heavyarmor").disabled = false;
+document.getElementById("mediumarmor").disabled = false;
+document.getElementById("lightarmor").disabled = false;
+} else if (strScore > 12) {
+document.getElementById("heavyarmor").disabled = true;
+document.getElementById("mediumarmor").disabled = false;
+document.getElementById("lightarmor").disabled = false;
+} else {
+document.getElementById("heavyarmor").disabled = true;
+document.getElementById("mediumarmor").disabled = true;
+document.getElementById("lightArmor").disabled = false;
+}
+}
+
+function defaultHP(){
+
+if (document.getElementById("defaultHP").checked == true) {
+document.getElementById("currentHP").value =
+((parseInt(document.getElementById("conMod").value) * 12) + 56);
+}
+
+function takeDamage() {
+var amount = document.getElementById("modHP").value;
+var currentHP = document.getElementById("currentHP").value;
+if ((currentHP - amount) >= 0) {
+document.getElementById("currentHP").value = currentHP - amount;
+} else {
+document.getElementById("currentHP").value = 0;
+}
+}
+
+function healHP() {
+var amount = parseInt(document.getElementById("modHP").value);
+var currentHP = parseInt(document.getElementById("currentHP").value);
+var maxHP = parseInt(document.getElementById("maxHP").value);
+if((currentHP + amount) <= maxHP) {
+document.getElementById("currentHP").value = currentHP + amount;
+} else {
+document.getElementById("currentHP").value = maxHP;
+}
+}
+}
+
+
+  //]]></script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "61qf9a48"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+
+
+</body>
+</html>
