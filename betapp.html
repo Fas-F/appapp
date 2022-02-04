@@ -1,3 +1,536 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Test</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script
+    type="text/javascript"
+    src="//code.jquery.com/jquery-3.2.1.slim.js"
+    
+  ></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+      /* SimpTip 
+// a simple CSS tooltip that has been made by Sass 
+// source: https://github.com/arashmanteghi/simptip/
+// ducoment: http://arashm.net/lab/simptip/
+// by @ArashManteghi - http://arashm.net */
+[data-tooltip] {
+  position: relative;
+  display: inline-block;
+}
+
+[data-tooltip]:before, [data-tooltip]:after {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 999999;
+}
+
+[data-tooltip]:before {
+  content: '';
+  position: absolute;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent;
+}
+
+[data-tooltip]:after {
+  height: 22px;
+  padding: 11px 11px 0 11px;
+  font-size: 13px;
+  line-height: 11px;
+  content: attr(data-tooltip);
+  white-space: nowrap;
+}
+
+[data-tooltip].simptip-position-top:before {
+  border-top-color: #8789b9;
+}
+
+[data-tooltip].simptip-position-top:after {
+  background-color: #8789b9;
+  color: #ecf0f1;
+}
+
+[data-tooltip].simptip-position-bottom:before {
+  border-bottom-color: #8789b9;
+}
+
+[data-tooltip].simptip-position-bottom:after {
+  background-color: #8789b9;
+  color: #ecf0f1;
+}
+
+[data-tooltip].simptip-position-left:before {
+  border-left-color: #8789b9;
+}
+
+[data-tooltip].simptip-position-left:after {
+  background-color: #8789b9;
+  color: #ecf0f1;
+}
+
+[data-tooltip].simptip-position-right:before {
+  border-right-color: #8789b9;
+}
+
+[data-tooltip].simptip-position-right:after {
+  background-color: #8789b9;
+  color: #ecf0f1;
+}
+
+[data-tooltip].simptip-position-top.half-arrow:before {
+  border-right: 7px solid #8789b9;
+}
+
+[data-tooltip].simptip-position-bottom.half-arrow:before {
+  border-right: 7px solid #8789b9;
+}
+
+[data-tooltip]:hover, [data-tooltip]:focus {
+  background-color: transparent;
+}
+
+[data-tooltip]:hover:before, [data-tooltip]:hover:after, [data-tooltip]:focus:before, [data-tooltip]:focus:after {
+  visibility: visible;
+  opacity: 1;
+}
+
+/******************************* Position ****************************/
+
+.simptip-position-right.simptip-movable:before, .simptip-position-right.simptip-movable:after, .simptip-position-left.simptip-movable:before, .simptip-position-left.simptip-movable:after, .simptip-position-top.simptip-movable:before, .simptip-position-top.simptip-movable:after, .simptip-position-bottom.simptip-movable:before, .simptip-position-bottom.simptip-movable:after {
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+
+.simptip-position-right:before, .simptip-position-right:after, .simptip-position-left:before, .simptip-position-left:after {
+  bottom: 50%;
+}
+
+.simptip-position-right:before, .simptip-position-left:before {
+  margin-bottom: -5px;
+  /*-5px*/
+}
+
+.simptip-position-right:after, .simptip-position-left:after {
+  margin-bottom: -14.66667px;
+}
+
+.simptip-position-right.half-arrow:before, .simptip-position-left.half-arrow:before {
+  bottom: 16px;
+  border-style: none;
+  border-top: 7px solid transparent;
+}
+
+.simptip-position-right.simptip-multiline:before, .simptip-position-right.simptip-multiline:after, .simptip-position-left.simptip-multiline:before, .simptip-position-left.simptip-multiline:after {
+  bottom: -50%;
+}
+
+.simptip-position-right.simptip-multiline:before, .simptip-position-left.simptip-multiline:before {
+  margin-bottom: 15px;
+}
+
+
+.simptip-position-right:before, .simptip-position-right:after {
+  left: 100%;
+}
+
+.simptip-position-right:before {
+  margin-left: -2px;
+}
+
+.simptip-position-right:after {
+  margin-left: 10px;
+}
+
+.simptip-position-right.simptip-movable:before {
+  margin-left: -10px;
+}
+
+.simptip-position-right.simptip-movable:after {
+  margin-left: 2px;
+}
+
+.simptip-position-right.simptip-movable:hover:before, .simptip-position-right.simptip-movable:hover:after {
+  -webkit-transform: translateX(10px);
+  -moz-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  -o-transform: translateX(10px);
+  transform: translateX(10px);
+}
+
+.simptip-position-right.simptip-movable.half-arrow:before {
+  margin-left: -5px;
+}
+
+.simptip-position-right.half-arrow:before {
+  margin-left: 3px;
+  border-right: 7px solid #8789b9;
+}
+
+
+.simptip-position-left:before, .simptip-position-left:after {
+  right: 100%;
+}
+
+.simptip-position-left:before {
+  margin-right: -2px;
+}
+
+.simptip-position-left:after {
+  margin-right: 10px;
+}
+
+.simptip-position-left.simptip-movable:before {
+  margin-right: -10px;
+}
+
+.simptip-position-left.simptip-movable:after {
+  margin-right: 2px;
+}
+
+.simptip-position-left.simptip-movable:hover:before, .simptip-position-left.simptip-movable:hover:after {
+  -webkit-transform: translateX(-10px);
+  -moz-transform: translateX(-10px);
+  -ms-transform: translateX(-10px);
+  -o-transform: translateX(-10px);
+  transform: translateX(-10px);
+}
+
+.simptip-position-left.simptip-movable.half-arrow:before {
+  margin-right: -5px;
+}
+
+.simptip-position-left.half-arrow:before {
+  margin-right: 3px;
+  border-left: 7px solid #8789b9;
+}
+
+
+.simptip-position-bottom:before, .simptip-position-bottom:after, .simptip-position-top:before, .simptip-position-top:after {
+  left: 50%;
+}
+
+.simptip-position-bottom:after, .simptip-position-top:after {
+  margin-left: -18px;
+}
+
+.simptip-position-bottom.half-arrow:before, .simptip-position-top.half-arrow:before {
+  border-style: none;
+  border-right: 7px solid #323232;
+}
+
+
+.simptip-position-bottom:before, .simptip-position-bottom:after {
+  top: 100%;
+}
+
+.simptip-position-bottom:before {
+  margin-top: -5px;
+  /*-5px*/
+}
+
+.simptip-position-bottom:after {
+  margin-top: 7px;
+}
+
+.simptip-position-bottom.simptip-movable:before {
+  margin-top: -15px;
+}
+
+.simptip-position-bottom.simptip-movable:after {
+  margin-top: -3px;
+}
+
+.simptip-position-bottom.simptip-movable:hover:before, .simptip-position-bottom.simptip-movable:hover:after {
+  -webkit-transform: translateY(10px);
+  -moz-transform: translateY(10px);
+  -ms-transform: translateY(10px);
+  -o-transform: translateY(10px);
+  transform: translateY(10px);
+}
+
+.simptip-position-bottom.simptip-movable.half-arrow:before {
+  margin-top: -10px;
+}
+
+.simptip-position-bottom.half-arrow:before {
+  margin-top: 0;
+  border-top: 7px solid transparent;
+}
+
+
+.simptip-position-top:before, .simptip-position-top:after {
+  bottom: 100%;
+}
+
+.simptip-position-top:before {
+  margin-bottom: -5px;
+  /*-5px*/
+}
+
+.simptip-position-top:after {
+  margin-bottom: 7px;
+}
+
+.simptip-position-top.simptip-movable:before {
+  margin-bottom: -15px;
+}
+
+.simptip-position-top.simptip-movable:after {
+  margin-bottom: -3px;
+}
+
+.simptip-position-top.simptip-movable:hover:before, .simptip-position-top.simptip-movable:hover:after {
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  -o-transform: translateY(-10px);
+  transform: translateY(-10px);
+}
+
+.simptip-position-top.simptip-movable.half-arrow:before {
+  margin-bottom: -10px;
+}
+
+.simptip-position-top.half-arrow:before {
+  margin-bottom: 0;
+  border-bottom: 7px solid transparent;
+}
+
+/******************************* Features ****************************/
+
+.simptip-smooth:after {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+
+
+.simptip-fade:before, .simptip-fade:after {
+  -webkit-transition: opacity 0.2s linear, visibility 0.2s linear;
+  -moz-transition: opacity 0.2s linear, visibility 0.2s linear;
+  -ms-transition: opacity 0.2s linear, visibility 0.2s linear;
+  -o-transition: opacity 0.2s linear, visibility 0.2s linear;
+  transition: opacity 0.2s linear, visibility 0.2s linear;
+}
+
+
+.simptip-multiline:after {
+  height: auto;
+  width: 200px;
+  padding: 11px;
+  line-height: 19px;
+  white-space: normal;
+  text-align: left;
+}
+
+/**************************** Diverse Colors *************************/
+
+.simptip-success.simptip-position-top:before {
+  border-top-color: #8789b9;
+}
+
+.simptip-success.simptip-position-top:after {
+  background-color: #8789b9;
+  color: #ecf0f1;
+}
+
+.simptip-success.simptip-position-bottom:before {
+  border-bottom-color: #8789b9;
+}
+
+.simptip-success.simptip-position-bottom:after {
+  background-color: #8789b9;
+  color: #ecf0f1;
+}
+
+.simptip-success.simptip-position-left:before {
+  border-left-color: #8789b9;
+}
+
+.simptip-success.simptip-position-left:after {
+  background-color: #8789b9;
+  color: #ecf0f1;
+}
+
+.simptip-success.simptip-position-right:before {
+  border-right-color: #8789b9;
+}
+
+.simptip-success.simptip-position-right:after {
+  background-color: #8789b9;
+  color: #ecf0f1;
+}
+
+.simptip-success.simptip-position-top.half-arrow:before {
+  border-right: 7px solid #8789b9;
+}
+
+.simptip-success.simptip-position-bottom.half-arrow:before {
+  border-right: 7px solid #8789b9;
+}
+
+
+.simptip-info.simptip-position-top:before {
+  border-top-color: #8789b9;
+}
+
+.simptip-info.simptip-position-top:after {
+  background-color: #8789b9;
+  color: #ecf0f1;
+}
+
+.simptip-info.simptip-position-bottom:before {
+  border-bottom-color: #8789b9;
+}
+
+.simptip-info.simptip-position-bottom:after {
+  background-color: #8789b9;
+  color: #ecf0f1;
+}
+
+.simptip-info.simptip-position-left:before {
+  border-left-color: #8789b9;
+}
+
+.simptip-info.simptip-position-left:after {
+  background-color: #8789b9;
+  color: #ecf0f1;
+}
+
+.simptip-info.simptip-position-right:before {
+  border-right-color: #8789b9;
+}
+
+.simptip-info.simptip-position-right:after {
+  background-color: #8789b9;
+  color: #ecf0f1;
+}
+
+.simptip-info.simptip-position-top.half-arrow:before {
+  border-right: 7px solid #8789b9;
+}
+
+.simptip-info.simptip-position-bottom.half-arrow:before {
+  border-right: 7px solid #8789b9;
+}
+
+
+.simptip-danger.simptip-position-top:before {
+  border-top-color: #8789b9;
+}
+
+.simptip-danger.simptip-position-top:after {
+  background-color: #8789b9;
+  color: #ecf0f1;
+}
+
+.simptip-danger.simptip-position-bottom:before {
+  border-bottom-color: #8789b9;
+}
+
+.simptip-danger.simptip-position-bottom:after {
+  background-color: #8789b9;
+  color: #ecf0f1;
+}
+
+.simptip-danger.simptip-position-left:before {
+  border-left-color: #8789b9;
+}
+
+.simptip-danger.simptip-position-left:after {
+  background-color: #8789b9;
+  color: #ecf0f1;
+}
+
+.simptip-danger.simptip-position-right:before {
+  border-right-color: #8789b9;
+}
+
+.simptip-danger.simptip-position-right:after {
+  background-color: #8789b9;
+  color: #ecf0f1;
+}
+
+.simptip-danger.simptip-position-top.half-arrow:before {
+  border-right: 7px solid #8789b9;
+}
+
+.simptip-danger.simptip-position-bottom.half-arrow:before {
+  border-right: 7px solid #8789b9;
+}
+
+
+.simptip-warning.simptip-position-top:before {
+  border-top-color: #8789b9;
+}
+
+.simptip-warning.simptip-position-top:after {
+  background-color: #8789b9;
+  color: #ecf0f1;
+}
+
+.simptip-warning.simptip-position-bottom:before {
+  border-bottom-color: #8789b9;
+}
+
+.simptip-warning.simptip-position-bottom:after {
+  background-color: #8789b9;
+  color: #ecf0f1;
+}
+
+.simptip-warning.simptip-position-left:before {
+  border-left-color: #8789b9;
+}
+
+.simptip-warning.simptip-position-left:after {
+  background-color: #8789b9;
+  color: #ecf0f1;
+}
+
+.simptip-warning.simptip-position-right:before {
+  border-right-color: #8789b9;
+}
+
+.simptip-warning.simptip-position-right:after {
+  background-color: #8789b9;
+  color: #ecf0f1;
+}
+
+.simptip-warning.simptip-position-top.half-arrow:before {
+  border-right: 7px solid #8789b9;
+}
+
+.simptip-warning.simptip-position-bottom.half-arrow:before {
+  border-right: 7px solid #8789b9;
+}
+    /* EOS */
+  </style>
+
+  <script id="insert"></script>
+
+
+</head>
+<body>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,13 +560,12 @@
 
 </head>
 <body>
-    <!DOCTYPE html>
 <html>
 <head>
 <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style type="text/css">
 body  {
-  background-image: url("https://fas-f.github.io/appapp/black-parchment-paper-texture.jpg");
+  background-image: url("https://fas-f.github.io/appapp/black-background-with-smoke-spotlight.jpg");
   background-color: #cccccc;
   color: #ecda75; !important
   font-family: garamond, georgia
@@ -75,9 +607,10 @@ table th{
 <form id="charSheet">
 <div class="row">
 <div class="col-4" style="">
-<h2>Name</h2><br>
+<h2>Name</h2>
 <input type="text" id="name" name="name"><br><br>
-<h2 contenteditable="true">Attributes</h2>
+<h2><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="Determines efficacies in various skills and feats. Examine each attribute for additional details. Spend a total of 30 points, beginning at a lowermost value of 8 for a -1 modifier, up to 18 points for a +4 modifier.">
+Attributes</span></h2>
    <td>Attribute Points Available:<input type="number" id="total" class="total" style="" value="30"></td>
 <table class="table">
 <tbody>
@@ -87,41 +620,44 @@ table th{
 <th>Modifier</th>
 </tr>
 <tr>
-      <td class="CellWithComment">Strength
-        <span class="CellComment">Governs attack/damage with melee weapons, athletics checks, strength saving throws.</span>
-      </td>
+        <td><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="Governs attack/damage with melee weapons, athletics checks, strength saving throws.">
+          Strength
+        </span></td>
 <td><input type="number" value="8" min="8" max="18" id="strScore" onchange="updateModifiers()" class="h-25 w-100 qty1" style=""></td>
 <td><input type="number" value="-1" id="strMod" style="" class="h-25 w-25"></td>
 </tr>
 <tr>
-      <td class="CellWithComment">Dexterity
-        <span class="CellComment">Governs attack/damage with ranged weapons, reflex saving throws, acrobatics & stealth checks.</span>
-      </td>
+        <td><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="Governs attack/damage with ranged weapons, reflex saving throws, acrobatics & stealth checks.">
+          Dexterity
+        </span></td>
 <td><input type="number" value="8" min="8" max="18" id="dexScore" onchange="updateModifiers()" class="h-25 w-100 qty1"></td>
 <td class="w-50"><input type="number" value="-1" id="dexMod" class="w-25"></td>
 </tr>
 <tr>
-      <td class="CellWithComment">Constitution
-        <span class="CellComment">Governs Vitality points at 12 per bonus, fortitude saving throws, unlocks advanced armory feats.</span>
-      </td>
+        <td><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="Governs Vitality points at 12 per modifier point, fortitude saving throws, unlocks advanced armory feats.">
+          Constitution
+        </span></td>
 <td><input type="number" value="8" min="8" max="18" id="conScore" onchange="updateModifiers()" class="h-25 w-100 qty1"></td>
 <td><input type="number" value="-1" id="conMod" class="w-25"></td>
 </tr>
 <tr>
-      <td class="CellWithComment">Intelligence
-        <span class="CellComment">Governs initial skillpoints at 3 per bonus, insight and engineering checks.</span>
+        <td><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="Governs initial skillpoints at 3 per modifier point, insight and engineering checks.">
+          Intelligence
+        </span></td>
 <td><input type="number" value="8" min="8" max="18" id="intScore" onchange="updateModifiers()" class="h-25 w-100 qty1 qty2"></td>
 <td><input type="number" value="-1" id="intMod" class="w-25 qty3"></td>
 </tr>
 <tr>
-      <td class="CellWithComment">Wisdom
-        <span class="CellComment">Governs attack/damage with Magicka, healing, awareness bonus.</span>
+        <td><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="Governs attack/damage with magic, healing, awareness checks.">
+          Wisdom
+        </span></td>
 <td><input type="number" value="8" min="8" max="18" id="wisScore" onchange="updateModifiers()" class="h-25 w-100 qty1"></td>
 <td><input type="number" value="-1" id="wisMod" class="w-25"></td>
 </tr>
 <tr>
-      <td class="CellWithComment">Charisma
-        <span class="CellComment">Governs persuasion and criminology.</span>
+        <td><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="Governs attack/damage with melee weapons, athletics checks, strength saving throws.">
+          Charisma
+        </span></td>
 <td><input type="number" value="8" min="8" max="18" id="chaScore" onchange="updateModifiers()" class="h-25 w-100 qty1"></td>
 <td><input type="number" value="" id="chaMod" class="h-25 w-25"></td>
 </tr>
@@ -132,7 +668,8 @@ table th{
 <btn class="btn btn-secondary" onclick="getStoredValues();">Load Data</btn>
 </div>
 <br>
-<h2>Vitality</h2>
+<h2><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="Begins at a base value of 56, adjusted by 12 points per modifier in constitution Tick the box to calculate your default HP. You can use the associated buttons to track damage throughout an event.">
+Vitality</span></h2>
 <div class="center-me">
 <input type="checkbox" id="defaultHP" onchange="defaultHP();">
 <span>Vitality: </span>
@@ -149,7 +686,8 @@ table th{
 </div>
 </div>
 <div class="col-4" style="">
-<h2>Feats</h2>
+<h2><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="Affords bonus profiencies in various abilities. Spend a total of 9 'feats', where Novice counts as one point, Intermediate two, and Mastery three. Untiered feats such as Resistance: Fear count as a single feat point. CURRENTLY UNTRACKED.">
+Feats</span></h2>
 <h6>Armory</h6>
 <select id="equippedArmor" onchange="equipArmor(this);">
 <option value="unarmored">Unarmored</option>
@@ -237,361 +775,377 @@ table th{
 <h6>Conjury and Restoration</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
-<optgroup id="arc1" value="Novice C&R" label="Feat: Novice C&R">
-<option value="arc1">+1 C&R</option>
+<optgroup id="conj1" value="Novice C&R" label="Feat: Novice C&R">
+<option value="conj1">+1 C&R</option>
 </optgroup>
-<optgroup id="arc2" value="Improved C&R" label="Feat: Improved C&R">
-<option value="arc2">+2 C&R</option>
+<optgroup id="conj2" value="Improved C&R" label="Feat: Improved C&R">
+<option value="conj2">+2 C&R</option>
 </optgroup>
-<optgroup id="arc3" value="C&R Mastery" label="Feat: C&R Mastery">
-<option value="arc3">+3 C&R</option>
+<optgroup id="conj3" value="C&R Mastery" label="Feat: C&R Mastery">
+<option value="conj3">+3 C&R</option>
 </optgroup>
 </select>
 <br>
 <h6>Conditioning</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc1" value="Novice Conditioning" label="Feat: Novice Conditioning">
-<option value="arc1">+1 Saving Throws</option>
+<select id="con" onchange="con(this);">
+<option value="con">Unskilled</option>
+<optgroup id="con1" value="Novice Conditioning" label="Feat: Novice Conditioning">
+<option value="con1">+1 Saving Throws</option>
 </optgroup>
-<optgroup id="arc2" value="Improved Conditioning" label="Feat: Improved Conditioning">
-<option value="arc2">+2 Saving Throws</option>
+<optgroup id="con2" value="Improved Conditioning" label="Feat: Improved Conditioning">
+<option value="con2">+2 Saving Throws</option>
 </optgroup>
-<optgroup id="arc3" value="Master Conditioning" label="Feat: Master Conditioning">
-<option value="arc3">+3 Saving Throws</option>
+<optgroup id="con3" value="Master Conditioning" label="Feat: Master Conditioning">
+<option value="con3">+3 Saving Throws</option>
 </optgroup>
 </select>
 <br>
 <h6>Toughness</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc1" value="Novice Toughness" label="Feat: Novice Toughness">
-<option value="arc1">-1 Damage/Hit</option>
+<select id="tough" onchange="tough(this);">
+<option value="tough">Unskilled</option>
+<optgroup id="tough1" value="Novice Toughness" label="Feat: Novice Toughness">
+<option value="tough1">-1 Damage/Hit</option>
 </optgroup>
-<optgroup id="arc2" value="Improved Toughness" label="Feat: Improved Conditioning">
-<option value="arc2">-2 Damage/Hit</option>
+<optgroup id="tough2" value="Improved Toughness" label="Feat: Improved Conditioning">
+<option value="tough2">-2 Damage/Hit</option>
 </optgroup>
-<optgroup id="arc3" value="Master Toughness" label="Feat: Toughness">
-<option value="arc3">-3 Damage/Hit</option>
+<optgroup id="tough3" value="Master Toughness" label="Feat: Toughness">
+<option value="tough3">-3 Damage/Hit</option>
 </optgroup>
 </select>
 <br>
 <h6>Resistance: Fear</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc1" value="Resistance: Fear" label="Feat: Resistance: Fear">
-<option value="arc1">+2 Fear Resistance</option>
+<select id="rfear" onchange="rfear(this);">
+<option value="rfear">Unskilled</option>
+<optgroup id="rfear1" value="Resistance: Fear" label="Feat: Resistance: Fear">
+<option value="rfear1">+2 Fear Resistance</option>
 </optgroup>
 </select>
 <br>
 <h6>Resistance: Poison</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc2" value="Resistance: Poison" label="Feat: Resistance: Poisong">
-<option value="arc2">+2 Poison Resistance</option>
+<select id="rpsn" onchange="rpsn(this);">
+<option value="rpsn">Unskilled</option>
+<optgroup id="rpsn1" value="Resistance: Poison" label="Feat: Resistance: Poison">
+<option value="rpsn1">+2 Poison Resistance</option>
 </optgroup>
 </select>
 <br>
 <h6>Resistance: Stun</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc2" value="Resistance: Stun" label="Feat: Resistance: Stun">
-<option value="arc2">+2 Stun Resistance</option>
+<select id="rstun" onchange="rstun(this);">
+<option value="rstun">Unskilled</option>
+<optgroup id="rstun1" value="Resistance: Stun" label="Feat: Resistance: Stun">
+<option value="restun1">+2 Stun Resistance</option>
 </optgroup>
 </select>
 <br>
 <h6>Break Their Back!</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc1" value="Resistance: Fear" label="Feat: Break Their Back!">
-<option value="arc1">+3 Stun</option>
+<select id="back" onchange="back(this);">
+<option value="back">Unskilled</option>
+<optgroup id="back1" value="Breack Their Back!" label="Feat: Break Their Back!">
+<option value="back1">+3 Stun Infliction</option>
 </optgroup>
 </select>
 <br>
 <h6>Break Their Will!</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc2" value="Resistance: Poison" label="Feat: Break Their Will!">
-<option value="arc2">+3 Fear</option>
+<select id="will" onchange="will(this);">
+<option value="will">Unskilled</option>
+<optgroup id="will1" value="Break Their Will!" label="Feat: Break Their Will!">
+<option value="will1">+3 Fear Infliction</option>
 </optgroup>
 </select>
 <br>
 <h6>Break Their Organs!</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc2" value="Resistance: Stun" label="Feat: Break Their Organs!">
-<option value="arc2">+3 Stun Poison</option>
+<select id="organ" onchange="organ(this);">
+<option value="organ">Unskilled</option>
+<optgroup id="organ1" value="Break Their Organs!" label="Feat: Break Their Organs!">
+<option value="organ1">+3 Poison Infliction</option>
 </optgroup>
 </select>
 <br>
 <h6>Disciple of The Land</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc2" value="Resistance: Stun" label="Disciple of the Hand">
-<option value="arc2">Crafting Expertise</option>
+<select id="dol" onchange="dol(this);">
+<option value="dol">Unskilled</option>
+<optgroup id="dol1" value="DoL" label="Disciple of the Hand">
+<option value="dol1">Crafting Expertise</option>
 </optgroup>
 </select>
 <br>
 <h6>Disciple of The Hand</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc2" value="Resistance: Stun" label="Disciple of the Land">
-<option value="arc2">Survivalism Expertise</option>
+<select id="doh" onchange="doh(this);">
+<option value="doh">Unskilled</option>
+<optgroup id="doh1" value="Resistance: Stun" label="Disciple of the Land">
+<option value="doh1">Survivalism Expertise</option>
 </optgroup>
 </select>
 <br>
 <h6>Cleave</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc1" value="Novice Cleaving" label="Feat: Novice Cleaving">
-<option value="arc1">+1 Damage/Targets per Target</option>
+<select id="cleave" onchange="cleave(this);">
+<option value="cleave">Unskilled</option>
+<optgroup id="cleave1" value="Novice Cleaving" label="Feat: Novice Cleaving">
+<option value="cleave1">+1 Damage/Targets per Target</option>
 </optgroup>
-<optgroup id="arc2" value="Improved Cleaving" label="Feat: Improved Cleaving">
-<option value="arc2">+2 Damage/Targets per Target</option>
+<optgroup id="cleave2" value="Improved Cleaving" label="Feat: Improved Cleaving">
+<option value="cleave2">+2 Damage/Targets per Target</option>
 </optgroup>
-<optgroup id="arc3" value="Master Cleaving" label="Feat: Master Cleaving">
-<option value="arc3">+3 Damage/Targets per Target</option>
+<optgroup id="cleave3" value="Master Cleaving" label="Feat: Master Cleaving">
+<option value="cleave3">+3 Damage/Targets per Target</option>
 </optgroup>
 </select>
 <br>
 <h6>Power Attack</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc1" value="Novice PA" label="Feat: Novice PA">
-<option value="arc1">-4 Attack/+3 Damage</option>
+<select id="pa" onchange="pa(this);">
+<option value="pa">Unskilled</option>
+<optgroup id="pa1" value="Novice PA" label="Feat: Novice PA">
+<option value="pa1">-4 Attack/+3 Damage</option>
 </optgroup>
-<optgroup id="arc2" value="Improved PA" label="Feat: Improved PA">
-<option value="arc2">-4 Attack/+5 Damage</option>
+<optgroup id="pa2" value="Improved PA" label="Feat: Improved PA">
+<option value="pa2">-4 Attack/+5 Damage</option>
 </optgroup>
-<optgroup id="arc3" value="Master PA" label="Feat: Master PA">
-<option value="arc3">-4 Attack/+7 Damage</option>
+<optgroup id="pa3" value="Master PA" label="Feat: Master PA">
+<option value="pa3">-4 Attack/+7 Damage</option>
 </optgroup>
 </select>
 <br>
 <h6>Flurry</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc1" value="Novice Flurry" label="Feat: Novice Flurry">
-<option value="arc1">Extra Attack, -4 Def (1/enc)</option>
+<select id="flur" onchange="flur(this);">
+<option value="flur">Unskilled</option>
+<optgroup id="flur1" value="Novice Flurry" label="Feat: Novice Flurry">
+<option value="flur1">Extra Attack, -4 Def (1/enc)</option>
 </optgroup>
-<optgroup id="arc2" value="Improved Flurry" label="Feat: Improved Flurry">
-<option value="arc2">Extra Attack, -2 Def (1/enc</option>
+<optgroup id="flur2" value="Improved Flurry" label="Feat: Improved Flurry">
+<option value="flur2">Extra Attack, -2 Def (1/enc</option>
 </optgroup>
-<optgroup id="arc3" value="Master Flurry" label="Feat: Master Flurry">
-<option value="arc3">Extra Attack, -1 Def (1/enc</option>
+<optgroup id="flur3" value="Master Flurry" label="Feat: Master Flurry">
+<option value="flur3">Extra Attack, -1 Def (1/enc</option>
 </optgroup>
 </select>
 <br>
 <h6>Critical Strike</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc1" value="Novice Crit Strike" label="Feat: Novice Crit. Strike">
-<option value="arc1">19-20 Crit, -5 Def</option>
+<select id="cs" onchange="cs(this);">
+<option value="cs">Unskilled</option>
+<optgroup id="cs1" value="Novice Crit Strike" label="Feat: Novice Crit. Strike">
+<option value="cs1">19-20 Crit, -5 Def</option>
 </optgroup>
-<optgroup id="arc2" value="Improved Crit. Strike" label="Feat: Improved Crit Strike">
-<option value="arc2">19-20 Crit, -3 Def</option>
+<optgroup id="cs2" value="Improved Crit. Strike" label="Feat: Improved Crit Strike">
+<option value="cs2">19-20 Crit, -3 Def</option>
 </optgroup>
-<optgroup id="arc3" value="Crit Strike Mastery" label="Feat: Crit Strike Mastery">
-<option value="arc3">18-20 Crit</option>
+<optgroup id="cs3" value="Crit Strike Mastery" label="Feat: Crit Strike Mastery">
+<option value="cs3">18-20 Crit</option>
 </optgroup>
 </select>
 <br>
 <h6>Sneak Attack</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc1" value="Novice Crit Strike" label="Feat: Novice Sneak Attack">
-<option value="arc1">+1-3 damage when target cannot respond to attack</option>
+<select id="sa" onchange="sa(this);">
+<option value="sa">Unskilled</option>
+<optgroup id="sa1" value="Novice Sneak Attack" label="Feat: Novice Sneak Attack">
+<option value="sa1">+1-3 damage when target cannot respond to attack</option>
 </optgroup>
-<optgroup id="arc2" value="Improved Crit. Strike" label="Feat: Improved Sneak Attack">
-<option value="arc2">+1-6 damage when target cannot respond to attack</option>
+<optgroup id="sa2" value="Improved Sneak Attack" label="Feat: Improved Sneak Attack">
+<option value="sa2">+1-6 damage when target cannot respond to attack</option>
 </optgroup>
-<optgroup id="arc3" value="Crit Strike Mastery" label="Feat: Master Sneak Attack">
-<option value="arc3">+1-9 damage when target cannot respond to attack</option>
+<optgroup id="sa3" value="Sneak Attack Mastery" label="Feat: Master Sneak Attack">
+<option value="sa3">+1-9 damage when target cannot respond to attack</option>
 </optgroup>
 </select>
 <br>
 <h6>Charge</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc1" value="Novice Crit Strike" label="Feat: Charge">
-<option value="arc1">+1 Attack/+1 Damage, 1/enc</option>
+<select id="chg" onchange="chg(this);">
+<option value="chg">Unskilled</option>
+<optgroup id="chg1" value="Novice Crit Strike" label="Feat: Charge">
+<option value="chg1">+1 Attack/+1 Damage, 1/enc</option>
 </optgroup>
-<optgroup id="arc2" value="Improved Crit. Strike" label="Feat: Improved Charge">
-<option value="arc2">+2 Attack/+2 Damage, 1/enc</option>
+<optgroup id="chg2" value="Improved Crit. Strike" label="Feat: Improved Charge">
+<option value="chg2">+2 Attack/+2 Damage, 1/enc</option>
 </optgroup>
-<optgroup id="arc3" value="Crit Strike Mastery" label="Feat: Master Charge">
-<option value="arc3">+4 Attack/+4 Damage, 1/enc</option>
+<optgroup id="chg3" value="Crit Strike Mastery" label="Feat: Master Charge">
+<option value="chg3">+4 Attack/+4 Damage, 1/enc</option>
 </optgroup>
 </select>
 <br>
 <h6>Cure</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc1" value="Novice Cure" label="Feat: Charge">
-<option value="arc1">+5 Healing, +WIS</option>
+<select id="cure" onchange="cure(this);">
+<option value="cure">Unskilled</option>
+<optgroup id="cure1" value="Novice Cure" label="Feat: Cure">
+<option value="cure1">+5 Healing, +WIS</option>
 </optgroup>
-<optgroup id="arc2" value="Improved Crit. Strike" label="Feat: Improved Cure">
-<option value="arc2">+3 Healing, +WIS, 3 members</option>
+<optgroup id="cure2" value="Improved Crit. Strike" label="Feat: Improved Cure">
+<option value="cure2">+3 Healing, +WIS, 3 members</option>
 </optgroup>
-<optgroup id="arc3" value="Crit Strike Mastery" label="Feat: Master Cure">
-<option value="arc3">+3 Healing, +WIS, All</option>
+<optgroup id="cure3" value="Crit Strike Mastery" label="Feat: Master Cure">
+<option value="cure3">+3 Healing, +WIS, All</option>
 </optgroup>
 </select>
 <br>
 <h6>Esuna</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc1" value="Novice Esuna" label="Feat: Charge">
-<option value="arc1">+1d6 Against Status</option>
+<select id="esuna" onchange="esuna(this);">
+<option value="esuna">Unskilled</option>
+<optgroup id="esuna1" value="Novice Esuna" label="Feat: Esuna">
+<option value="esuna1">+1d6 Against Status</option>
 </optgroup>
-<optgroup id="arc2" value="Improved Crit. Strike" label="Feat: Improved Esuna">
-<option value="arc2">+1d4 Against Status, 3 members</option>
+<optgroup id="esuna2" value="Improved Crit. Strike" label="Feat: Improved Esuna">
+<option value="esuna2">+1d4 Against Status, 3 Members</option>
 </optgroup>
-<optgroup id="arc3" value="Crit Strike Mastery" label="Feat: Esuna Mastery">
-<option value="arc3">+1d4 Against Status, All</option>
+<optgroup id="esuna3" value="Crit Strike Mastery" label="Feat: Esuna Mastery">
+<option value="esuna3">+1d4 Against Status, All</option>
 </optgroup>
 </select>
 <br>
 <h6>Barriers</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc1" value="Novice Barriers" label="Feat: Charge">
-<option value="arc1">-3 Damage All, 1/enc</option>
+<select id="bar" onchange="bar(this);">
+<option value="bar">Unskilled</option>
+<optgroup id="bar1" value="Novice Barriers" label="Feat: Charge">
+<option value="bar1">-3 Damage All, 1/enc</option>
 </optgroup>
-<optgroup id="arc2" value="Improved Crit. Strike" label="Feat: Improved Barriers">
-<option value="arc2">-5 Damage All, 1/enc</option>
+<optgroup id="bar2" value="Improved Crit. Strike" label="Feat: Improved Barriers">
+<option value="bar2">-5 Damage All, 1/enc</option>
 </optgroup>
-<optgroup id="arc3" value="Crit Strike Mastery" label="Feat: Barriers Mastery">
-<option value="arc3">+7 Damage All, 1/enc</option>
+<optgroup id="bar3" value="Crit Strike Mastery" label="Feat: Barriers Mastery">
+<option value="var3">+7 Damage All, 1/enc</option>
 </optgroup>
 </select>
 <br>
 <h6>Streetwise</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc1" value="Novice Streetwise" label="Feat: Novice Streetwise">
-<option value="arc1">+1 Criminology</option>
+<select id="street" onchange="street(this);">
+<option value="street">Unskilled</option>
+<optgroup id="street1" value="Novice Streetwise" label="Feat: Novice Streetwise">
+<option value="street1">+1 Criminology</option>
 </optgroup>
-<optgroup id="arc2" value="Improved Crit. Strike" label="Feat: Improved Streetwise">
-<option value="arc2">+2 Criminology</option>
+<optgroup id="street2" value="Improved Streetwise" label="Feat: Improved Streetwise">
+<option value="street2">+2 Criminology</option>
 </optgroup>
-<optgroup id="arc3" value="Crit Strike Mastery" label="Feat: Streetwise Mastery">
-<option value="arc3">+3 Criminology</option>
+<optgroup id="street3" value="Streetwise Mastery" label="Feat: Streetwise Mastery">
+<option value="street3">+3 Criminology</option>
 </optgroup>
 </select>
 <br>
 <h6>Empathy</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc1" value="Novice Streetwise" label="Feat: Novice Empathy">
-<option value="arc1">+1 Persuade</option>
+<select id="empath" onchange="empath(this);">
+<option value="empath">Unskilled</option>
+<optgroup id="empath1" value="Novice Streetwise" label="Feat: Novice Empathy">
+<option value="empath1">+1 Persuade</option>
 </optgroup>
-<optgroup id="arc2" value="Improved Crit. Strike" label="Feat: Improved Empathy">
-<option value="arc2">+2 Persuade</option>
+<optgroup id="empath2" value="Improved Crit. Strike" label="Feat: Improved Empathy">
+<option value="empath2">+2 Persuade</option>
 </optgroup>
-<optgroup id="arc3" value="Crit Strike Mastery" label="Feat: Empathy Mastery">
-<option value="arc3">+3 Persuade</option>
+<optgroup id="empath3" value="Crit Strike Mastery" label="Feat: Empathy Mastery">
+<option value="empath3">+3 Persuade</option>
 </optgroup>
 </select>
 <br>
 <h6>Clairvoyance</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc1" value="Novice Clairvoyance" label="Feat: Novice Empathy">
-<option value="arc1">+1 Awareness</option>
+<select id="clair" onchange="clair(this);">
+<option value="clair">Unskilled</option>
+<optgroup id="clair1" value="Novice Clairvoyance" label="Feat: Novice Empathy">
+<option value="clair1">+1 Awareness</option>
 </optgroup>
-<optgroup id="arc2" value="Improved Crit. Strike" label="Feat: Improved Clairvoyance">
-<option value="arc2">+2 Awareness</option>
+<optgroup id="clair2" value="Improved Clairvoyance" label="Feat: Improved Clairvoyance">
+<option value="clair2">+2 Awareness</option>
 </optgroup>
-<optgroup id="arc3" value="Crit Strike Mastery" label="Feat: Clairvoyance Mastery">
-<option value="arc3">+3 Awareness</option>
+<optgroup id="clair3" value="Clairvoyance Mastery" label="Feat: Clairvoyance Mastery">
+<option value="clair3">+3 Awareness</option>
 </optgroup>
 </select>
 <br>
 <h6>Bookworm</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc1" value="Novice Clairvoyance" label="Feat: Novice Bookworm">
-<option value="arc1">+1 Insight</option>
+<select id="book" onchange="book(this);">
+<option value="book">Unskilled</option>
+<optgroup id="book1" value="Novice Bookworm" label="Feat: Novice Bookworm">
+<option value="book1">+1 Insight</option>
 </optgroup>
-<optgroup id="arc2" value="Improved Crit. Strike" label="Feat: Improved Clairvoyance">
-<option value="arc2">+2 Insight</option>
+<optgroup id="book2" value="Improved Bookworm" label="Feat: Improved Bookworm">
+<option value="book2">+2 Insight</option>
 </optgroup>
-<optgroup id="arc3" value="Crit Strike Mastery" label="Feat: Insight Mastery">
-<option value="arc3">+3 Insight</option>
+<optgroup id="book3" value="Master Bookworm" label="Feat: Master Bookworm">
+<option value="book3">+3 Insight</option>
 </optgroup>
 </select>
 <br>
 <h6>Gear Head</h6>
-<select id="conj" onchange="conj(this);">
-<option value="conj">Unskilled</option>
-<optgroup id="arc1" value="Novice Clairvoyance" label="Feat: Novice Gear Head">
-<option value="arc1">+1 Engineering</option>
+<select id="gearhead" onchange="conj(this);">
+<option value="gearhead">Unskilled</option>
+<optgroup id="gearhead1" value="Novice Gear Head" label="Feat: Novice Gear Head">
+<option value="gearhead1">+1 Engineering</option>
 </optgroup>
-<optgroup id="arc2" value="Improved Crit. Strike" label="Feat: Improved Clairvoyance">
-<option value="arc2">+2 Engineering</option>
+<optgroup id="gearhead2" value="Improved Gear Head" label="Feat: Improved Gear Head">
+<option value="gearhead2">+2 Engineering</option>
 </optgroup>
-<optgroup id="arc3" value="Crit Strike Mastery" label="Feat: Insight Mastery">
-<option value="arc3">+3 Engineering</option>
+<optgroup id="gearhead3" value="Gear Head Mastery" label="Feat: Gear Head Mastery">
+<option value="gearhead3">+3 Engineering</option>
 </optgroup>
 </select>
 </div>
 <div class="col-4" style="">
-<h2 style="">Skills</h2>
+<h2><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="Determines aptitude in core domains of expertise or skill. Often used outside of combat, though skills such as awareness may influence other core mechanics. Max value of 12. SET THESE AFTER INTELLIGENCE - You are advised to save your current state and reload if you are unsure of INT score!">
+Skills</span></h2>
    <td>Skill Points Available:<input type="number" id="stotal" class="stotal" style="" value="10"></td>
 <table class="table">
 <tbody>
 <tr>
 <td><input type="checkbox" id="acroProf" onchange="setSkills();"></td>
-<td>Acrobatics</td>
+<td><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="The ability to remain on your feet in a tricky situation, or to otherwise preform gymnastic feats.">
+Acrobatics</span></td>
 <td><input type="number" id="acroScore" class="w-25 qty4 qtyacr" min="0" max="12"></td>
 </tr>
 <tr></tr>
 <tr></tr>
 <tr>
 <td><input type="checkbox" id="athlProf" onchange="setSkills();"></td>
-<td>Athetics</td>
-<td><input type="number" id="athlScore" class="w-25 qty4 qtyathl min="0" max="12""></td>
+<td><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="From climbing, jumping, swimming, to kicking in doors. General physical prowess.">
+Athletics</span></td>
+<td><input type="number" id="athlScore" class="w-25 qty4 qtyathl" min="0" max="12"></td>
 </tr>
 <tr>
 <td><input type="checkbox" id="aweProf" onchange="setSkills();"></td>
-<td>Awareness</td>
+<td><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="Generalized perception, be it of character or circumstance. Also influences initiative rating for combat.">
+Awareness</span></td>
 <td><input type="number" id="aweScore" class="w-25 qty4 qtyawe" min="0" max="12"></td>
 </tr>
 <tr>
 <td><input type="checkbox" id="crimProf" onchange="setSkills();"></td>
-<td>Criminology</td>
+<td><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="Mastery of traps and locks, as well as underworld knowledge and the connections therein.">
+Criminology</span></td>
 <td><input type="number" id="crimScore" class="w-25 qty4 qtycrim" min="0" max="12"></td>
 </tr>
 <tr>
 <td><input type="checkbox" id="engiProf" onchange="setSkills();"></td>
-<td>Engineering</td>
+<td><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="Knowledge of Garlean magitek, Allagan constructs, as well as generalized disciplines such as civil.">
+Engineering</span></td>
 <td><input type="number" id="engiScore" class="w-25 qty4 qtyengi"></td>
 </tr>
 <tr>
 <td><input type="checkbox" id="insProf" onchange="setSkills();"></td>
-<td>Insight</td>
-<td><input type="number" id="insScore" class="w-25 qty4 qtyins min="0" max="12""></td>
+<td><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="Generalized knowledge of histories, lore, regions and beastiary.">
+Insight</span></td>
+<td><input type="number" id="insScore" class="w-25 qty4 qtyins" min="0" max="12"></td>
 </tr>
 <tr>
 <td><input type="checkbox" id="persProf" onchange="setSkills();"></td>
-<td>Persuade</td>
+<td><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="The ability to win over others, be it by initimidation or charm.">
+Persuade</span></td>
 <td><input type="number" id="persScore" class="w-25 qty4 qtypers" min="0" max="12"></td>
 </tr>
 <tr>
 <td><input type="checkbox" id="steProf" onchange="setSkills();"></td>
-<td>Stealth</td>
+<td><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="Efficiency at hiding in the shadows.">
+Stealth</span></td>
 <td><input type="number" id="steScore" class="w-25 qty4 qtyste" min="0" max="12"></td>
 </tr>
 </tbody>
 </table>
-<h6>Defense Rating</h6><input type="number" id="armorClass" placeholder="0" class="form-control-sm w-25" style=""><br>
+<h6><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="Applied to determine if an attack hits, influenced by dexterity and armor bonuses.">
+Defense Bonus</span></h6><input type="number" id="armorClass" placeholder="0" class="form-control-sm w-25" style=""><br>
 <br>
-<h6>Initiative Bonus</h6><input type="number" id="initClass" placeholder="0" class="form-control-sm w-25" style="">
+<h6><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="Turn order in combat bonus. Influenced by dexterity and awareness.">
+Initiative Bonus</span></h6><input type="number" id="initClass" placeholder="0" class="form-control-sm w-25" style=""><br>
 <br>
-<h6>Fortitude Save</h6><input type="number" id="fortClass" placeholder="0" class="form-control-sm w-25" style="">
-<h6>Will Save</h6><input type="number" id="willClass" placeholder="0" class="form-control-sm w-25" style="">
-<h6>Reflex Save</h6><input type="number" id="reflClass" placeholder="0" class="form-control-sm w-25" style="">
+<h6><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="Bonus for fortitude saves, which encompasses poison and stun. Influenced by constitution.">
+Fortitude Save</span></h6><input type="number" id="fortClass" placeholder="0" class="form-control-sm w-25" style=""><br>
+<br>
+<h6><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="Bonus for will saves, which encompasses horror and other mind-affecting ailments. Influenced by wisdom.">
+Will Save</span></h6><input type="number" id="willClass" placeholder="0" class="form-control-sm w-25" style=""><br>
+<br>
+<h6><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="Bonus for reflex saves, which encompasses slowed and paralysis ailments. Influenced by dexterity.">
+Reflex Save</span></h6><input type="number" id="reflClass" placeholder="0" class="form-control-sm w-25" style=""><br>
 <br>
 </div>
 </div>
@@ -1089,6 +1643,7 @@ document.getElementById("currentHP").value = maxHP;
 }
 
 
+
   //]]></script>
 
   <script>
@@ -1096,7 +1651,7 @@ document.getElementById("currentHP").value = maxHP;
     if (window.parent && window.parent.parent){
       window.parent.parent.postMessage(["resultsFrame", {
         height: document.body.getBoundingClientRect().height,
-        slug: "61qf9a48"
+        slug: "fodqbe64"
       }], "*")
     }
 
