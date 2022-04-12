@@ -703,6 +703,7 @@ Feats</span></h2>
 </optgroup>
 </select>
 <br>
+<br>
 <h6>Duelist</h6>
 <select id="duelist" onchange="duelist(this);">
 <option value="usduel">Unskilled</option>
@@ -716,6 +717,7 @@ Feats</span></h2>
 <option value="duel3">+3 One-Handed</option>
 </optgroup>
 </select>
+<br>
 <br>
 <h6>Greatweapons</h6>
 <select id="gr8" onchange="greatweapons(this);">
@@ -731,6 +733,7 @@ Feats</span></h2>
 </optgroup>
 </select>
 <br>
+<br>
 <h6>Ballistics</h6>
 <select id="boom" onchange="boom(this);">
 <option value="usboom">Unskilled</option>
@@ -744,6 +747,7 @@ Feats</span></h2>
 <option value="boom3">+3 Firearms</option>
 </optgroup>
 </select>
+<br>
 <br>
 <h6>Ranged Weapons</h6>
 <select id="range" onchange="range(this);">
@@ -759,7 +763,8 @@ Feats</span></h2>
 </optgroup>
 </select>
 <br>
-<h6>Arcane Arts</h6>
+<br>
+<h6>Thaumaturgy</h6>
 <select id="arc" onchange="arc(this);">
 <option value="usgr8">Unskilled</option>
 <optgroup id="arc1" value="Arcane Novice" label="Feat: Arcane Novice">
@@ -773,7 +778,8 @@ Feats</span></h2>
 </optgroup>
 </select>
 <br>
-<h6>Conjury and Restoration</h6>
+<br>
+<h6>Conjury</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
 <optgroup id="conj1" value="Novice C&R" label="Feat: Novice C&R">
@@ -786,6 +792,7 @@ Feats</span></h2>
 <option value="conj3">+3 C&R</option>
 </optgroup>
 </select>
+<br>
 <br>
 <h6>Conditioning</h6>
 <select id="con" onchange="con(this);">
@@ -801,6 +808,7 @@ Feats</span></h2>
 </optgroup>
 </select>
 <br>
+<br>
 <h6>Toughness</h6>
 <select id="tough" onchange="tough(this);">
 <option value="tough">Unskilled</option>
@@ -815,69 +823,6 @@ Feats</span></h2>
 </optgroup>
 </select>
 <br>
-<h6>Resistance: Fear</h6>
-<select id="rfear" onchange="rfear(this);">
-<option value="rfear">Unskilled</option>
-<optgroup id="rfear1" value="Resistance: Fear" label="Feat: Resistance: Fear">
-<option value="rfear1">+2 Fear Resistance</option>
-</optgroup>
-</select>
-<br>
-<h6>Resistance: Poison</h6>
-<select id="rpsn" onchange="rpsn(this);">
-<option value="rpsn">Unskilled</option>
-<optgroup id="rpsn1" value="Resistance: Poison" label="Feat: Resistance: Poison">
-<option value="rpsn1">+2 Poison Resistance</option>
-</optgroup>
-</select>
-<br>
-<h6>Resistance: Stun</h6>
-<select id="rstun" onchange="rstun(this);">
-<option value="rstun">Unskilled</option>
-<optgroup id="rstun1" value="Resistance: Stun" label="Feat: Resistance: Stun">
-<option value="restun1">+2 Stun Resistance</option>
-</optgroup>
-</select>
-<br>
-<h6>Break Their Back!</h6>
-<select id="back" onchange="back(this);">
-<option value="back">Unskilled</option>
-<optgroup id="back1" value="Breack Their Back!" label="Feat: Break Their Back!">
-<option value="back1">+3 Stun Infliction</option>
-</optgroup>
-</select>
-<br>
-<h6>Break Their Will!</h6>
-<select id="will" onchange="will(this);">
-<option value="will">Unskilled</option>
-<optgroup id="will1" value="Break Their Will!" label="Feat: Break Their Will!">
-<option value="will1">+3 Fear Infliction</option>
-</optgroup>
-</select>
-<br>
-<h6>Break Their Organs!</h6>
-<select id="organ" onchange="organ(this);">
-<option value="organ">Unskilled</option>
-<optgroup id="organ1" value="Break Their Organs!" label="Feat: Break Their Organs!">
-<option value="organ1">+3 Poison Infliction</option>
-</optgroup>
-</select>
-<br>
-<h6>Disciple of The Land</h6>
-<select id="dol" onchange="dol(this);">
-<option value="dol">Unskilled</option>
-<optgroup id="dol1" value="DoL" label="Disciple of the Hand">
-<option value="dol1">Crafting Expertise</option>
-</optgroup>
-</select>
-<br>
-<h6>Disciple of The Hand</h6>
-<select id="doh" onchange="doh(this);">
-<option value="doh">Unskilled</option>
-<optgroup id="doh1" value="Resistance: Stun" label="Disciple of the Land">
-<option value="doh1">Survivalism Expertise</option>
-</optgroup>
-</select>
 <br>
 <h6>Cleave</h6>
 <select id="cleave" onchange="cleave(this);">
@@ -893,103 +838,21 @@ Feats</span></h2>
 </optgroup>
 </select>
 <br>
-<h6>Power Attack</h6>
-<select id="pa" onchange="pa(this);">
-<option value="pa">Unskilled</option>
-<optgroup id="pa1" value="Novice PA" label="Feat: Novice PA">
-<option value="pa1">-4 Attack/+3 Damage</option>
-</optgroup>
-<optgroup id="pa2" value="Improved PA" label="Feat: Improved PA">
-<option value="pa2">-4 Attack/+5 Damage</option>
-</optgroup>
-<optgroup id="pa3" value="Master PA" label="Feat: Master PA">
-<option value="pa3">-4 Attack/+7 Damage</option>
-</optgroup>
-</select>
-<br>
-<h6>Flurry</h6>
-<select id="flur" onchange="flur(this);">
-<option value="flur">Unskilled</option>
-<optgroup id="flur1" value="Novice Flurry" label="Feat: Novice Flurry">
-<option value="flur1">Extra Attack, -4 Def (1/enc)</option>
-</optgroup>
-<optgroup id="flur2" value="Improved Flurry" label="Feat: Improved Flurry">
-<option value="flur2">Extra Attack, -2 Def (1/enc</option>
-</optgroup>
-<optgroup id="flur3" value="Master Flurry" label="Feat: Master Flurry">
-<option value="flur3">Extra Attack, -1 Def (1/enc</option>
-</optgroup>
-</select>
-<br>
-<h6>Critical Strike</h6>
-<select id="cs" onchange="cs(this);">
-<option value="cs">Unskilled</option>
-<optgroup id="cs1" value="Novice Crit Strike" label="Feat: Novice Crit. Strike">
-<option value="cs1">19-20 Crit, -5 Def</option>
-</optgroup>
-<optgroup id="cs2" value="Improved Crit. Strike" label="Feat: Improved Crit Strike">
-<option value="cs2">19-20 Crit, -3 Def</option>
-</optgroup>
-<optgroup id="cs3" value="Crit Strike Mastery" label="Feat: Crit Strike Mastery">
-<option value="cs3">18-20 Crit</option>
-</optgroup>
-</select>
-<br>
-<h6>Sneak Attack</h6>
-<select id="sa" onchange="sa(this);">
-<option value="sa">Unskilled</option>
-<optgroup id="sa1" value="Novice Sneak Attack" label="Feat: Novice Sneak Attack">
-<option value="sa1">+1-3 damage when target cannot respond to attack</option>
-</optgroup>
-<optgroup id="sa2" value="Improved Sneak Attack" label="Feat: Improved Sneak Attack">
-<option value="sa2">+1-6 damage when target cannot respond to attack</option>
-</optgroup>
-<optgroup id="sa3" value="Sneak Attack Mastery" label="Feat: Master Sneak Attack">
-<option value="sa3">+1-9 damage when target cannot respond to attack</option>
-</optgroup>
-</select>
-<br>
-<h6>Charge</h6>
-<select id="chg" onchange="chg(this);">
-<option value="chg">Unskilled</option>
-<optgroup id="chg1" value="Novice Crit Strike" label="Feat: Charge">
-<option value="chg1">+1 Attack/+1 Damage, 1/enc</option>
-</optgroup>
-<optgroup id="chg2" value="Improved Crit. Strike" label="Feat: Improved Charge">
-<option value="chg2">+2 Attack/+2 Damage, 1/enc</option>
-</optgroup>
-<optgroup id="chg3" value="Crit Strike Mastery" label="Feat: Master Charge">
-<option value="chg3">+4 Attack/+4 Damage, 1/enc</option>
-</optgroup>
-</select>
 <br>
 <h6>Cure</h6>
 <select id="cure" onchange="cure(this);">
 <option value="cure">Unskilled</option>
 <optgroup id="cure1" value="Novice Cure" label="Feat: Cure">
-<option value="cure1">+5 Healing, +WIS</option>
+<option value="cure1">+3 Healing, 1 target</option>
 </optgroup>
 <optgroup id="cure2" value="Improved Crit. Strike" label="Feat: Improved Cure">
-<option value="cure2">+3 Healing, +WIS, 3 members</option>
+<option value="cure2">+3 Healing, 3 members</option>
 </optgroup>
 <optgroup id="cure3" value="Crit Strike Mastery" label="Feat: Master Cure">
-<option value="cure3">+3 Healing, +WIS, All</option>
+<option value="cure3">+3 Healing, All</option>
 </optgroup>
 </select>
 <br>
-<h6>Esuna</h6>
-<select id="esuna" onchange="esuna(this);">
-<option value="esuna">Unskilled</option>
-<optgroup id="esuna1" value="Novice Esuna" label="Feat: Esuna">
-<option value="esuna1">+1d6 Against Status</option>
-</optgroup>
-<optgroup id="esuna2" value="Improved Crit. Strike" label="Feat: Improved Esuna">
-<option value="esuna2">+1d4 Against Status, 3 Members</option>
-</optgroup>
-<optgroup id="esuna3" value="Crit Strike Mastery" label="Feat: Esuna Mastery">
-<option value="esuna3">+1d4 Against Status, All</option>
-</optgroup>
-</select>
 <br>
 <h6>Barriers</h6>
 <select id="bar" onchange="bar(this);">
@@ -1005,75 +868,6 @@ Feats</span></h2>
 </optgroup>
 </select>
 <br>
-<h6>Streetwise</h6>
-<select id="street" onchange="street(this);">
-<option value="street">Unskilled</option>
-<optgroup id="street1" value="Novice Streetwise" label="Feat: Novice Streetwise">
-<option value="street1">+1 Criminology</option>
-</optgroup>
-<optgroup id="street2" value="Improved Streetwise" label="Feat: Improved Streetwise">
-<option value="street2">+2 Criminology</option>
-</optgroup>
-<optgroup id="street3" value="Streetwise Mastery" label="Feat: Streetwise Mastery">
-<option value="street3">+3 Criminology</option>
-</optgroup>
-</select>
-<br>
-<h6>Empathy</h6>
-<select id="empath" onchange="empath(this);">
-<option value="empath">Unskilled</option>
-<optgroup id="empath1" value="Novice Streetwise" label="Feat: Novice Empathy">
-<option value="empath1">+1 Persuade</option>
-</optgroup>
-<optgroup id="empath2" value="Improved Crit. Strike" label="Feat: Improved Empathy">
-<option value="empath2">+2 Persuade</option>
-</optgroup>
-<optgroup id="empath3" value="Crit Strike Mastery" label="Feat: Empathy Mastery">
-<option value="empath3">+3 Persuade</option>
-</optgroup>
-</select>
-<br>
-<h6>Clairvoyance</h6>
-<select id="clair" onchange="clair(this);">
-<option value="clair">Unskilled</option>
-<optgroup id="clair1" value="Novice Clairvoyance" label="Feat: Novice Empathy">
-<option value="clair1">+1 Awareness</option>
-</optgroup>
-<optgroup id="clair2" value="Improved Clairvoyance" label="Feat: Improved Clairvoyance">
-<option value="clair2">+2 Awareness</option>
-</optgroup>
-<optgroup id="clair3" value="Clairvoyance Mastery" label="Feat: Clairvoyance Mastery">
-<option value="clair3">+3 Awareness</option>
-</optgroup>
-</select>
-<br>
-<h6>Bookworm</h6>
-<select id="book" onchange="book(this);">
-<option value="book">Unskilled</option>
-<optgroup id="book1" value="Novice Bookworm" label="Feat: Novice Bookworm">
-<option value="book1">+1 Insight</option>
-</optgroup>
-<optgroup id="book2" value="Improved Bookworm" label="Feat: Improved Bookworm">
-<option value="book2">+2 Insight</option>
-</optgroup>
-<optgroup id="book3" value="Master Bookworm" label="Feat: Master Bookworm">
-<option value="book3">+3 Insight</option>
-</optgroup>
-</select>
-<br>
-<h6>Gear Head</h6>
-<select id="gearhead" onchange="conj(this);">
-<option value="gearhead">Unskilled</option>
-<optgroup id="gearhead1" value="Novice Gear Head" label="Feat: Novice Gear Head">
-<option value="gearhead1">+1 Engineering</option>
-</optgroup>
-<optgroup id="gearhead2" value="Improved Gear Head" label="Feat: Improved Gear Head">
-<option value="gearhead2">+2 Engineering</option>
-</optgroup>
-<optgroup id="gearhead3" value="Gear Head Mastery" label="Feat: Gear Head Mastery">
-<option value="gearhead3">+3 Engineering</option>
-</optgroup>
-</select>
 </div>
 <div class="col-4" style="">
 <h2><span class="simptip-position-bottom simptip-movable half-arrow simptip-multiline simptip-info" data-tooltip="Determines aptitude in core domains of expertise or skill. Often used outside of combat, though skills such as awareness may influence other core mechanics. Max value of 12. SET THESE AFTER INTELLIGENCE - You are advised to save your current state and reload if you are unsure of INT score!">
