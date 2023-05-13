@@ -564,7 +564,7 @@
 <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style type="text/css">
 body  {
-  background-image: url("https://fas-f.github.io/appapp/engin-akyurt-8CItx_c0CkI-unsplash.jpg");
+  background-image: url("https://fas-f.github.io/appapp/deep_sea___texture_mix_3_by_gtande10_d79h3mj");
   background-color: #cccccc;
   background-size: cover;
   background-repeat: no-repeat;
@@ -779,7 +779,7 @@ Feats</span></h2>
 </select>
 <br>
 <br>
-<h6>Conjury</h6>
+<h6>Conjury & Restoration</h6>
 <select id="conj" onchange="conj(this);">
 <option value="conj">Unskilled</option>
 <optgroup id="conj1" value="Novice C&R" label="Feat: Novice C&R">
@@ -795,8 +795,8 @@ Feats</span></h2>
 <br>
 <br>
 <h6>Conditioning</h6>
-<select id="con" onchange="con(this);">
-<option value="con">Unskilled</option>
+<select id="con" onchange="equipCond(this);">
+<option value="uncon">Unskilled</option>
 <optgroup id="con1" value="Novice Conditioning" label="Feat: Novice Conditioning">
 <option value="con1">+1 Saving Throws</option>
 </optgroup>
@@ -815,10 +815,10 @@ Feats</span></h2>
 <optgroup id="tough1" value="Novice Toughness" label="Feat: Novice Toughness">
 <option value="tough1">-1 Damage/Hit</option>
 </optgroup>
-<optgroup id="tough2" value="Improved Toughness" label="Feat: Improved Conditioning">
+<optgroup id="tough2" value="Improved Toughness" label="Feat: Improved Toughness">
 <option value="tough2">-2 Damage/Hit</option>
 </optgroup>
-<optgroup id="tough3" value="Master Toughness" label="Feat: Toughness">
+<optgroup id="tough3" value="Master Toughness" label="Feat: Master Toughness">
 <option value="tough3">-3 Damage/Hit</option>
 </optgroup>
 </select>
@@ -845,10 +845,10 @@ Feats</span></h2>
 <optgroup id="cure1" value="Novice Cure" label="Feat: Cure">
 <option value="cure1">+3 Healing, 1 target</option>
 </optgroup>
-<optgroup id="cure2" value="Improved Crit. Strike" label="Feat: Improved Cure">
+<optgroup id="cure2" value="Improved Cure" label="Feat: Improved Cure">
 <option value="cure2">+3 Healing, 3 members</option>
 </optgroup>
-<optgroup id="cure3" value="Crit Strike Mastery" label="Feat: Master Cure">
+<optgroup id="cure3" value="Master Cure" label="Feat: Master Cure">
 <option value="cure3">+3 Healing, All</option>
 </optgroup>
 </select>
@@ -857,7 +857,7 @@ Feats</span></h2>
 <h6>Barriers</h6>
 <select id="bar" onchange="bar(this);">
 <option value="bar">Unskilled</option>
-<optgroup id="bar1" value="Novice Barriers" label="Feat: Charge">
+<optgroup id="bar1" value="Novice Barriers" label="Feat: Barriers">
 <option value="bar1">-3 Damage All, 1/enc</option>
 </optgroup>
 <optgroup id="bar2" value="Improved Crit. Strike" label="Feat: Improved Barriers">
@@ -1247,6 +1247,9 @@ updateModifiers();
 //Armor
 document.getElementById("equippedArmor").value = localStorage.getItem("equippedArmor");
 equipArmor(equippedArmor);
+//Conditioning
+document.getElementById("equippedCond").value = localStorage.getItem("equippedCond");
+equipArmor(equippedCond);
 //Vit
 document.getElementById("currentHP").value = localStorage.getItem("currentHP");
 document.getElementById("maxHP").value = localStorage.getItem("maxHP");
@@ -1314,6 +1317,7 @@ setReflex();
 defaultHP();
 enableArmor();
 equipArmor(equippedArmor);
+equipCond(equippedCond);
 }
 
 function setSkills() {
@@ -1391,6 +1395,21 @@ document.getElementById("armorClass").value = parseInt(document.getElementById("
 document.getElementById("armorClass").value = parseInt(document.getElementById("dexMod").value) + 3;
 }
 }
+
+function equipCond(equippedCond) {
+var con = equippedCond.value;
+if (con == 'uncon') {
+document.getElementById("armorClass").value = parseInt(document.getElementById("conMod").value);
+} else if (con == 'con1') {
+document.getElementById("armorClass").value = parseInt(document.getElementById("conMod").value) + 1;
+} else if (con == 'con2') {
+document.getElementById("armorClass").value = parseInt(document.getElementById("conMod").value) + 2;
+} else if (con == 'con3') {
+document.getElementById("armorClass").value = parseInt(document.getElementById("conMod").value) + 3;
+}
+}
+
+
 function enableArmor() {
 var strScore = document.getElementById("strScore").value;
 if (strScore > 14) {
